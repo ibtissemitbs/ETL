@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ETL</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #7c3aed;
+            --secondary: #06b6d4;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --panel: #ffffff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --border: #dbe3ef;
+        }
+        /* Dark theme overrides when `dark-mode` is present on the root element */
+        html.dark-mode {
+            --primary: #7c3aed;
+            --secondary: #06b6d4;
+            --success: #10b981;
+            --danger: #fb7185;
+            --bg: #071026;
+            --panel: #071826;
+            --text: #e6eef8;
+            --muted: #93a6bf;
+            --border: #122033;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, #eef2ff 0, #f8fafc 38%, #edf7fb 100%);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        html.dark-mode body {
+            background: radial-gradient(circle at top, #051426 0, #071026 40%, #04101b 100%);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--panel);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        nav .brand {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 700;
+            margin-left: 1rem;
+        }
+        nav button#themeToggle { margin-left: 0.6rem; border-radius:999px; padding:0.45rem 0.75rem; font-weight:700; cursor:pointer; background:transparent; border:1px solid var(--border); color:var(--text); }
+        nav button#themeToggle:focus-visible, .btn:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            padding: 1.6rem 1.8rem;
+            border-radius: 1.2rem;
+            background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(6,182,212,0.92));
+            color: white;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+        }
+        .hero h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+        .hero p { opacity: 0.95; }
+        .toolbar {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .btn {
+            border: none;
+            border-radius: 0.8rem;
+            padding: 0.8rem 1rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .btn-primary { background: white; color: var(--primary); }
+        .btn-secondary { background: rgba(255,255,255,0.16); color: white; border: 1px solid rgba(255,255,255,0.35); }
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 10px 24px rgba(15,23,42,0.05);
+        }
+        .kpi-label {
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+        }
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-top: 0.25rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 0.4rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .good { background: rgba(16,185,129,0.12); color: #047857; }
+        .warn { background: rgba(245,158,11,0.14); color: #b45309; }
+        .bad { background: rgba(239,68,68,0.12); color: #b91c1c; }
+        .list {
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+        }
+        .list li {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 0.8rem;
+            padding: 0.8rem 0.9rem;
+        }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .chart-shell {
+            display: grid;
+            gap: 0.9rem;
+        }
+        .bar-chart {
+            display: grid;
+            gap: 0.8rem;
+        }
+        .bar-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 64px;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .bar-track {
+            width: 100%;
+            height: 16px;
+            background: var(--border);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 999px;
+        }
+        .bar-fill.primary { background: linear-gradient(90deg, var(--primary), #a855f7); }
+        .bar-fill.secondary { background: linear-gradient(90deg, var(--secondary), #22c55e); }
+        .bar-fill.warn { background: linear-gradient(90deg, #f59e0b, #f97316); }
+        .bar-fill.danger { background: linear-gradient(90deg, #ef4444, #fb7185); }
+        .chart-note {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .mini-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 0.7rem;
+        }
+        .mini-metric {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 0.8rem;
+            padding: 0.8rem;
+        }
+        .mini-metric .label {
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .mini-metric .value {
+            font-size: 1.35rem;
+            font-weight: 900;
+            margin-top: 0.2rem;
+        }
+        details summary { cursor: pointer; font-weight: 800; }
+        .empty {
+            color: var(--muted);
+            padding: 0.8rem 0;
+        }
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        .insight-chip {
+            border: 1px solid var(--border);
+            border-radius: 0.8rem;
+            padding: 0.8rem 0.9rem;
+            background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,182,212,0.08));
+        }
+        .insight-chip .label {
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .insight-chip .value {
+            margin-top: 0.25rem;
+            font-weight: 800;
+        }
+        .domain-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin: 0.2rem 0 0.9rem;
+            padding: 0.45rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(124, 58, 237, 0.12);
+            color: var(--primary);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            font-weight: 800;
+            width: fit-content;
+        }
+        .insight-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.9rem;
+            overflow: hidden;
+            border-radius: 0.8rem;
+            border: 1px solid var(--border);
+        }
+        .insight-table th,
+        .insight-table td {
+            padding: 0.7rem 0.8rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.92rem;
+        }
+        .insight-table th {
+            background: rgba(124, 58, 237, 0.08);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.55rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            background: rgba(16, 185, 129, 0.12);
+            color: #047857;
+        }
+        .pill.warn {
+            background: rgba(245, 158, 11, 0.14);
+            color: #b45309;
+        }
+        .pill.bad {
+            background: rgba(239, 68, 68, 0.12);
+            color: #b91c1c;
+        }
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: 1fr; }
+            nav { padding: 1rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">⚡ ETL Dashboard</div>
+        <div>
+            <a href="/">Accueil</a>
+            <a href="/dashboard">Dashboard</a>
+            <button id="themeToggle" type="button" aria-label="Activer le mode sombre" aria-pressed="false" title="Basculer le thème" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <section class="hero">
+            <h1>Dashboard des résultats</h1>
+            <p>Interface séparée pour suivre le dernier traitement ETL, la qualité des données et les actions appliquées.</p>
+            <div class="toolbar">
+                <button class="btn btn-primary" onclick="refreshDashboard()">↻ Rafraîchir</button>
+                <button class="btn btn-secondary" onclick="window.location.href='/'">← Retour à l'accueil</button>
+            </div>
+        </section>
+
+        <section class="kpis" id="kpis">
+            <div class="card"><div class="kpi-label">Qualité avant</div><div class="kpi-value">--</div></div>
+            <div class="card"><div class="kpi-label">Qualité après</div><div class="kpi-value">--</div></div>
+            <div class="card"><div class="kpi-label">Amélioration</div><div class="kpi-value">--</div></div>
+            <div class="card"><div class="kpi-label">Actions</div><div class="kpi-value">--</div></div>
+        </section>
+
+        <section class="grid">
+            <div class="card" id="summaryPanel">
+                <div class="empty">Chargement du dernier rapport...</div>
+            </div>
+        </section>
+
+        <section class="charts-grid">
+            <div class="card" id="chartQuality">
+                <div class="empty">Chargement du graphique de qualité...</div>
+            </div>
+            <div class="card" id="chartIssues">
+                <div class="empty">Chargement du graphique des anomalies...</div>
+            </div>
+            <div class="card" id="chartActions">
+                <div class="empty">Chargement du graphique des actions...</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Categorize modifications by type
+        function normalizeText(value) {
+            return String(value || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function categorizeModifications(mods) {
+            const categories = {
+                'Type Conversions': [],
+                'Standardization': [],
+                'Normalization': [],
+                'Missing Values': [],
+                'Logical Issues': [],
+                'Outliers': [],
+                'Duplicates': [],
+                'Date Validation': [],
+                'Other': []
+            };
+
+            mods.forEach(mod => {
+                const lower = normalizeText(mod);
+
+                if (lower.includes('convert') || lower.includes('coerc') || lower.includes('cast') || lower.includes('type ')) {
+                    categories['Type Conversions'].push(mod);
+                } else if (lower.includes('standardis') || lower.includes('standardiz') || lower.includes('standardized') ||
+                           lower.includes('standardisation') || lower.includes('phone') || lower.includes('telephone') || lower.includes('format')) {
+                    categories['Standardization'].push(mod);
+                } else if (lower.includes('normalis') || lower.includes('normaliz') || lower.includes('trim') || lower.includes('strip') || lower.includes('title-case')) {
+                    categories['Normalization'].push(mod);
+                } else if (lower.includes('null') || lower.includes('missing') || lower.includes('filled') || lower.includes('manquant')) {
+                    categories['Missing Values'].push(mod);
+                } else if (lower.includes('swap') || lower.includes('logical') || lower.includes('order date') || lower.includes('inconsist')) {
+                    categories['Logical Issues'].push(mod);
+                } else if (lower.includes('outlier') || lower.includes('iqr')) {
+                    categories['Outliers'].push(mod);
+                } else if (lower.includes('duplicate')) {
+                    categories['Duplicates'].push(mod);
+                } else if (lower.includes('date') && (lower.includes('invalid') || lower.includes('impossible') || lower.includes('future') || lower.includes('old'))) {
+                    categories['Date Validation'].push(mod);
+                } else if (lower.includes('type error') || lower.includes('invalid numeric') || lower.includes('unparseable')) {
+                    categories['Type Conversions'].push(mod);
+                } else {
+                    categories['Other'].push(mod);
+                }
+            });
+
+            return categories;
+        }
+
+        // Format categories for display
+        function formatCategorizedMods(categories) {
+            const hasAnyMods = Object.values(categories).some(cat => cat.length > 0);
+            if (!hasAnyMods) return '';
+
+            const html = Object.entries(categories)
+                .filter(([_, items]) => items.length > 0)
+                .map(([category, items]) => `
+                    <div style="margin: 1rem 0; padding: 0.8rem; background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--success); border-radius: 0.5rem;">
+                        <strong style="color: var(--success);">✅ ${category} (${items.length} ${items.length === 1 ? 'treatment' : 'treatments'})</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            ${items.map(item => `<li style="margin: 0.3rem 0; font-size: 0.9rem;">${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                `)
+                .join('');
+
+            return html;
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.documentElement.classList.toggle('dark-mode', isDark);
+            const button = document.getElementById('themeToggle');
+            if (button) {
+                button.textContent = isDark ? '☀️' : '🌙';
+                button.setAttribute('aria-pressed', String(isDark));
+                button.setAttribute('aria-label', isDark ? 'Activer le mode clair' : 'Activer le mode sombre');
+            }
+        }
+
+        const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', nextTheme);
+            applyTheme(nextTheme);
+        }
+
+        applyTheme(localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+        async function refreshDashboard() {
+            const panel = document.getElementById('summaryPanel');
+            panel.innerHTML = '<div class="empty">Chargement du dernier rapport...</div>';
+
+            try {
+                const response = await fetch(`${API_BASE}/last-report`);
+                if (!response.ok) {
+                    throw new Error('Aucun rapport disponible');
+                }
+                const data = await response.json();
+                renderDashboard(data);
+            } catch (err) {
+                panel.innerHTML = `<div class="empty">${err.message}</div>`;
+            }
+        }
+
+        function renderDashboard(data) {
+            const kpis = document.getElementById('kpis');
+            const stats = data.data_stats || {};
+            const modifications = data.modifications || [];
+
+            const kpiValues = kpis.querySelectorAll('.kpi-value');
+            if (kpiValues.length >= 4) {
+                kpiValues[0].textContent = stats.data_quality_before || '--';
+                kpiValues[1].textContent = stats.data_quality_after || '--';
+                kpiValues[2].textContent = stats.data_quality_improved_by || '--';
+                kpiValues[3].textContent = modifications.length || 0;
+            }
+
+            const panel = document.getElementById('summaryPanel');
+            const domainContext = data.domain_context || {};
+            const domainLabel = domainContext.label || domainContext.domain || 'Générique';
+
+            const statusClass = stats.data_quality_after && parseFloat(stats.data_quality_after) >= 85 ? 'good' :
+                stats.data_quality_after && parseFloat(stats.data_quality_after) >= 70 ? 'warn' : 'bad';
+
+            panel.innerHTML = `
+                <div class="status ${statusClass}">
+                    ${stats.data_quality_after || '--'} qualité finale
+                </div>
+                <div class="domain-badge">Domaine: ${domainLabel}</div>
+                <p><strong>Fichier:</strong> ${data.filename || 'N/A'}</p>
+                <p><strong>Lignes:</strong> ${stats.original_size || '--'} → ${stats.cleaned_size || '--'}</p>
+                <p><strong>Amélioration:</strong> ${stats.data_quality_improved_by || '--'}</p>
+                <details open>
+                    <summary>Modifications (${modifications.length})</summary>
+                    ${formatCategorizedMods(categorizeModifications(modifications)) || '<div class="empty">Aucune modification</div>'}
+                </details>
+            `;
+
+            renderCharts(data);
+        }
+
+        function renderCharts(data) {
+            const quality = document.getElementById('chartQuality');
+            const issues = document.getElementById('chartIssues');
+            const actions = document.getElementById('chartActions');
+
+            const before = parseFloat((data.quality_report?.score_before || '0').replace('%', '')) || 0;
+            const after = parseFloat((data.quality_report?.score_after || '0').replace('%', '')) || 0;
+            const improvement = Math.max(0, after - before);
+
+            quality.innerHTML = `
+                <div class="chart-shell">
+                    <h3>Qualité globale</h3>
+                    <div class="bar-chart">
+                        <div class="bar-row">
+                            <div>Avant</div>
+                            <div class="bar-track"><div class="bar-fill primary" style="width:${before}%;"></div></div>
+                            <div>${before.toFixed(1)}%</div>
+                        </div>
+                        <div class="bar-row">
+                            <div>Après</div>
+                            <div class="bar-track"><div class="bar-fill secondary" style="width:${after}%;"></div></div>
+                            <div>${after.toFixed(1)}%</div>
+                        </div>
+                        <div class="bar-row">
+                            <div>Gain</div>
+                            <div class="bar-track"><div class="bar-fill warn" style="width:${improvement}%;"></div></div>
+                            <div>+${improvement.toFixed(1)}%</div>
+                        </div>
+                    </div>
+                    <div class="chart-note">Comparaison basée sur le dernier traitement.</div>
+                </div>
+            `;
+
+            const beforeIssues = data.quality_report?.before || {};
+            const afterIssues = data.quality_report?.after || {};
+            const issueRows = [
+                ['Null cells', beforeIssues.null_cells, afterIssues.null_cells],
+                ['Empty rows', beforeIssues.empty_rows, afterIssues.empty_rows],
+                ['Empty columns', beforeIssues.empty_columns, afterIssues.empty_columns],
+                ['Duplicates', beforeIssues.duplicates, afterIssues.duplicates]
+            ];
+
+            issues.innerHTML = `
+                <div class="chart-shell">
+                    <h3>Évolution des anomalies</h3>
+                    <table class="insight-table">
+                        <thead>
+                            <tr><th>Type</th><th>Avant</th><th>Après</th></tr>
+                        </thead>
+                        <tbody>
+                            ${issueRows.map(row => `
+                                <tr>
+                                    <td>${row[0]}</td>
+                                    <td>${row[1] ?? 0}</td>
+                                    <td>${row[2] ?? 0}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            const mods = data.modifications || [];
+            const categories = categorizeModifications(mods);
+            const actionList = Object.entries(categories)
+                .filter(([_, items]) => items.length > 0)
+                .map(([category, items]) => `
+                    <div class="bar-row">
+                        <div>${category}</div>
+                        <div class="bar-track"><div class="bar-fill primary" style="width:${Math.min(items.length * 8, 100)}%;"></div></div>
+                        <div>${items.length}</div>
+                    </div>
+                `)
+                .join('') || '<div class="empty">Aucune action</div>';
+
+            actions.innerHTML = `
+                <div class="chart-shell">
+                    <h3>Actions appliquées</h3>
+                    <div class="bar-chart">
+                        ${actionList}
+                    </div>
+                </div>
+            `;
+        }
+
+        refreshDashboard();
+    </script>
+</body>
+</html>

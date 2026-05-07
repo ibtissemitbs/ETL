@@ -1,0 +1,30 @@
+{
+  "examples": [
+    {
+      "profile_hint": "Small orders dataset with order_id, delivery_date, price, quantity, status",
+      "example_json": {
+        "dataset_summary": { "dataset_type": "logistics", "general_quality": "medium", "notes": ["dates inconsistent format", "price has non-numeric tokens"] },
+        "rename_columns": { "cust_name": "customer_name" },
+        "drop_columns": [],
+        "convert_types": { "order_id": "int", "delivery_date": "datetime", "price": "float" },
+        "fill_nulls": { "status": "unknown", "quantity": 1 },
+        "normalization_rules": { "warehouse": { "tuniss": "Tunis" } },
+        "text_case_rules": { "customer_name": "title" },
+        "validation_rules": { "delivery_date": { "type": "past_date" } }
+      }
+    },
+    {
+      "profile_hint": "Pivoted sales workbook with Segment>>, Consumer, Corporate, Home Office, and Total columns",
+      "example_json": {
+        "dataset_summary": { "dataset_type": "sales_pivoted", "general_quality": "low", "notes": ["sheet is pivoted and must be unpivoted before normal cleaning", "Unnamed columns are structural, not missing data", "Segment/ship-mode hierarchy should be preserved"] },
+        "drop_columns": [],
+        "convert_types": { "id": "string", "value": "float" },
+        "fill_nulls": { "category": "Unknown", "type": "Unknown" },
+        "normalization_rules": { "category": { "consumer": "Consumer", "corporate": "Corporate", "home office": "Home Office" } },
+        "text_case_rules": { "category": "title", "type": "title" },
+        "deduplication": { "remove_duplicates": true, "subset": ["id", "category", "type"] },
+        "validation_rules": { "value": { "type": "range", "min": 0 } }
+      }
+    }
+  ]
+}

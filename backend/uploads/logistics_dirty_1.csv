@@ -1,0 +1,221 @@
+order_id,product_name,category,warehouse,supplier,quantity,unit_price,order_date,shipment_date,delivery_date,destination_city,transport_mode,status
+1000,Phone,Electronics,Sfax_WH2,Samsung,5.0,1200,2024-01-02,2024-01-05,2024-01-08,Bizerte,Air,In Transit
+1001,Mouse,Office Supplies,Tunis_WH1,Dell,3.0,60,2024-01-06,2024-01-09,2024-01-13,Sfax,Air,In Transit
+1002,ROUTER,Electronics,,Samsung,15.0,300,2024-01-02,2024-01-05,2024-01-07,GABES,Road,Delivered
+1003,Tablet,Electronics,Sousse_WH3,Samsung,7.0,99999,2024-02-14,2024-02-16,2024-02-19,Monastir,Road,Delivered
+1004,Phone,Electronics,Sousse_WH3,Huawei,,1200,2024-01-25,2024-01-26,2024-01-29,Monastir,Air,In Transit
+1005,Keyboard,Office Supplies,,Huawei,10.0,100,2024-02-04,2024-02-05,2024-02-09,Monastir,Sea,shipping
+1006,Printer,Office Supplies,Tunis_WH1,Logitech,8.0,700,2024-02-06,2024-02-07,2024-08-02,Monastir,road,delivered
+1007,Chair,Furniture,Sousse_WH3,HP,12.0,150,2024-02-25,2024-02-25,2024-03-01,Sfax,Road,Pending
+1008,Chair,Furniture,Sfax_WH2,Huawei,8.0,150,2024-02-12,2024-02-14,2024-02-15,Sfax,Road,Pending
+1009,desk,Furniture,Sfax_WH2,Logitech,11.0,400,2024-02-29,2024-02-29,2024-03-08,Monastir,Air,Delivered
+1010,Laptop,Electronics,Sousse_WH3,Dell,7.0,2500,2024-02-21,2024-02-23,2024-02-27,Gabes,Sea,Pending
+1011,Chair,Furniture,,Samsung,9.0,150,2024-02-11,2024-02-13,2024-02-17,sfax, Air ,In Transit
+1012,Mouse,Office Supplies,Nabeul_WH4,Huawei,13.0,-100,2024-02-04,2024-02-06,2024-11-02,Sousse,Air,Delivered
+1013,Mouse,Office Supplies,Tunis_WH1,Samsung,6.0,0,2024-02-01,2024-02-02,2024-02-03,MONASTIR,Sea,Pending
+1014,ROUTER,Electronics,Nabeul_WH4,Huawei,9.0,-100,2024-01-05,2024-01-07,2024-01-11,Gabes,Air,delivered
+1015,Phone,Electronics,Sousse_WH3,Dell,10.0,1200,2024-02-13,2024-02-16,2024-02-19,Nabeul,Air,Pending
+1016,Laptop,Electronics,Sfax_WH2,Huawei,4.0,2500,2024-02-16,2024-02-19,2024-02-22,Monastir, Sea ,Pending
+1017,Mouse,Office Supplies,Sousse_WH3,Cisco,6.0,60,2024-02-08,2024-02-09,2024-11-02,Gabes,SEA,Delivered
+1018,Router,Electronics,Tunis_WH1,Ikea,10.0,0,2024-01-21,2024-01-23,2024-01-24,Sfax,Air,Delivered
+1019,Router,Electronics,,Cisco,3.0,-100,2024-03-01,2024-03-02,2024-03-03,Monastir,Sea,shipping
+1020,Tablet,Electronics,Sfax_WH2,Ikea,17.0,900,2024-02-12,2024-02-14,2024-02-19,Monastir,Sea,Pending
+1021,chair,Furniture,,HP,12.0,0,2024-02-29,2024-03-03,2024-03-05,Nabeul,Sea,Pending
+1022,Phone,Electronics,Sousse_WH3,Dell,19.0,1200,2024-01-16,2024-01-17,2024-01-18,GABES,Air,In Transit
+1023,Chair,Furniture,Sfax_WH2,Dell,,150,2024-01-01,2024-01-02,2024-01-03,Monastir,Road,Delivered
+1024,Mouse,Office Supplies,Sfax_WH2,Huawei,5.0,60,2024-01-16,2024-01-18,2024-01-22,Bizerte,Sea,In Transit
+1025,Keyboard,Office Supplies,Sfax_WH2,Dell,4.0,100,2024-01-16,2024-01-18,2024-01-22,Bizerte,Road,Pending
+1026,Monitor,Electronics,Tunis_WH1,Dell,13.0,800,2024-01-27,2024-01-29,2024-01-30,Bizerte,Road,Delivered
+1027,Chair,Furniture,Nabeul_WH4,Samsung,14.0,150,2024-01-13,2024-01-14,2024-01-19,Sfax,Road,Pending
+1028,Chair,Furniture,Tunis_WH1,Dell,18.0,-100,2024-02-25,2024-02-26,2024-03-01,Monastir,Air,Delivered
+1029,Chair,Furniture,Nabeul_WH4,Samsung,13.0,99999,2024-01-11,2024-01-13,2024-01-17,Tunis,Air,Pending
+1030,Laptop,Electronics,Sousse_WH3,HP,18.0,2500,2024-01-25,2024-01-25,2024-01-31,BIZERTE,Sea,shipping
+1031,Tablet,Electronics,Tunis_WH1,Huawei,,900,2024-01-13,2024-01-15,2024-01-17,Tunis,Sea,Pending
+1032,Laptop,Electronics,Sfax_WH2,Dell,17.0,2500,2024-01-04,2024-01-07,2024-01-11,Tunis,AIR,Delivered
+1033,Router,Electronics,Nabeul_WH4,Dell,19.0,300,2024-01-05,2024-01-08,2024-01-10,Sfax,Sea,shipping
+1034,laptop,Electronics,Sousse_WH3,Ikea,7.0,99999,2024-02-09,2024-10-02,2024-02-14,Bizerte,Sea,Pending
+1035,Chair,Furniture,Sousse_WH3,HP,11.0,150,2024-01-17,2024-01-19,2024-01-21,Monastir,air,done
+1036,Keyboard,Office Supplies,Tunis_WH1,Huawei,7.0,100,2024-02-09,2024-12-02,2024-02-13,Gabes,Road,done
+1037,Printer,Office Supplies,Sousse_WH3,Ikea,6.0,700,2024-02-26,2024-02-27,2024-02-29,Nabeul,Sea,In Transit
+1038,Desk,Furniture,Tunis_WH1,Logitech,18.0,400,2024-02-09,2024-02-12,2024-02-17,Sousse,Sea,Delivered
+1039,Tablet,Electronics,Sfax_WH2,Ikea,,900,2024-01-17,2024-01-18,2024-01-19, Gabes ,AIR,In Transit
+1040,Printer,Office Supplies,Nabeul_WH4,Ikea,,-100,2024-01-14,2024-01-17,2024-01-20,Tunis,Sea,shipping
+1041, Desk ,Furniture,Sfax_WH2,Logitech,9.0,400,2024-01-03,2024-01-04,2024-01-07, Sfax ,SEA,Pending
+1042,Mouse,Office Supplies,Tunis_WH1,Dell,3.0,60,2024-02-15,2024-02-15,2024-02-22,Bizerte,Air,In Transit
+1043,Laptop,Electronics,Sfax_WH2,HP,5.0,2500,2024-02-23,2024-02-25,2024-03-01,Tunis,Road,Pending
+1044, Laptop ,Electronics,Sfax_WH2,Logitech,4.0,2500,2024-02-27,2024-02-27,2024-03-02,Sousse,Sea,Pending
+1045,Router,Electronics,Sfax_WH2,Cisco,6.0,300,2024-02-17,2024-02-18,2024-02-20,Nabeul,Air,Delivered
+1046,Printer,Office Supplies,Sousse_WH3,Samsung,4.0,99999,2024-02-20,2024-02-22,2024-02-24,Nabeul,Air,Pending
+1047,Chair,Furniture,Sousse_WH3,Cisco,8.0,150,2024-01-13,2024-01-15,2024-01-18,Sfax,Air,In Transit
+1048,Chair,Furniture,Tunis_WH1,Cisco,9.0,150,2024-01-26,2024-01-28,2024-01-31,Sousse,Sea,In Transit
+1049,Monitor,Electronics,Tunis_WH1,Dell,9.0,99999,2024-02-13,2024-02-16,2024-02-19,Sfax,Sea,delivered
+1050,Laptop,Electronics,Sousse_WH3,Logitech,11.0,2500,2024-01-07,2024-10-01,2024-01-14,Nabeul,Sea,In Transit
+1051,Phone,Electronics,Sousse_WH3,Dell,14.0,1200,2024-01-25,2024-01-28,2024-01-30,Tunis,Sea,In Transit
+1052, Chair ,Furniture,Sousse_WH3,Huawei,,150,2024-01-24,2024-01-26,2024-01-27,Bizerte,Air,In Transit
+1053,Desk,Furniture,Sousse_WH3,HP,10.0,400,2024-02-02,2024-02-04,2024-02-08,GABES,Air,Delivered
+1054,Monitor,Electronics,,HP,18.0,800,2024-02-12,2024-02-12,2024-02-16,Monastir, Air ,delivered
+1055,DESK,Furniture,Sousse_WH3,HP,15.0,400,2024-01-14,2024-01-16,2024-01-21,Nabeul,Sea,Delivered
+1056, Mouse ,Office Supplies,Tunis_WH1,Ikea,17.0,60,2024-01-31,2024-02-03,2024-02-05,Bizerte,Sea,In Transit
+1057,Printer,Office Supplies,Sfax_WH2,Cisco,7.0,700,2024-01-06,2024-01-07,2024-01-10,Sfax,Air,Delivered
+1058,chair,Furniture,Nabeul_WH4,HP,19.0,150,2024-01-31,2024-02-03,2024-02-04, Sfax ,Sea,In Transit
+1059,Monitor,Electronics,Sfax_WH2,Logitech,1.0,800,2024-02-01,2024-02-03,2024-02-05,Monastir,Air,Pending
+1060,Chair,Furniture,Nabeul_WH4,Dell,,150,2024-01-12,2024-01-15,2024-01-20,Sfax,AIR,Pending
+1061,Tablet,Electronics,Sousse_WH3,Cisco,,900,2024-02-21,2024-02-23,2024-02-28,Gabes,Sea,In Transit
+1062,Monitor,Electronics,Sfax_WH2,Logitech,16.0,800,2024-02-23,2024-02-23,2024-03-01,Nabeul,Road,Delivered
+1063,Desk,Furniture,Sfax_WH2,Ikea,15.0,-100,2024-02-19,2024-02-22,2024-02-26,Tunis,Sea,Pending
+1064,Chair,Furniture,,Samsung,5.0,150,2024-01-18,2024-01-20,2024-01-23,Sfax,road,shipping
+1065,Tablet,Electronics,Nabeul_WH4,HP,11.0,0,2024-02-15,2024-02-16,2024-02-17,Gabes,Road,delivered
+1066,LAPTOP,Electronics,Tunis_WH1,Cisco,19.0,2500,2024-01-14,2024-01-14,2024-01-20,Nabeul,Road,Delivered
+1067, Printer ,Office Supplies,Sfax_WH2,HP,8.0,0,2024-01-20,2024-01-22,2024-01-26,Sousse,Road,Pending
+1068,Laptop,Electronics,Sfax_WH2,Cisco,15.0,2500,2024-01-25,2024-01-27,2024-01-31,Sfax, Sea ,In Transit
+1069,Laptop,Electronics,Tunis_WH1,Dell,14.0,2500,2024-02-28,2024-03-01,2024-03-06,SFAX,Road,Delivered
+1070,Laptop,Electronics,Sfax_WH2,HP,11.0,2500,2024-01-17,2024-01-17,2024-01-22,Sousse,Road,Pending
+1071,Monitor,Electronics,Tunis_WH1,Logitech,18.0,800,2024-01-17,2024-01-18,2024-01-22,Tunis,Road,Delivered
+1072,Phone,Electronics,Tunis_WH1,Samsung,7.0,-100,2024-02-19,2024-02-22,2024-02-23,MONASTIR,Air,In Transit
+1073,Tablet,Electronics,Tunis_WH1,Huawei,7.0,900,2024-01-16,2024-01-16,2024-01-21,Nabeul,Sea,Pending
+1074, Printer ,Office Supplies,,Cisco,6.0,700,2024-01-11,2024-01-14,2024-01-19,Sousse,AIR,In Transit
+1075,laptop,Electronics,Nabeul_WH4,HP,7.0,2500,2024-02-29,2024-02-03,2024-03-07,Tunis,Sea,In Transit
+1076,Chair,Furniture,,Cisco,19.0,150,2024-01-07,2024-01-10,2024-01-13,Monastir, Air ,Pending
+1077,Mouse,Office Supplies,Tunis_WH1,Huawei,11.0,60,2024-01-28,2024-01-31,2024-02-03,Tunis,Road,Pending
+1078,Phone,Electronics,Sfax_WH2,HP,6.0,1200,2024-01-28,2024-01-28,2024-02-03,Bizerte,Sea,In Transit
+1079,desk,Furniture,Nabeul_WH4,HP,19.0,400,2024-02-09,2024-02-12,2024-02-16,Sousse,Road,Delivered
+1080,Phone,Electronics,Nabeul_WH4,Huawei,20.0,0,2024-01-18,2024-01-20,2024-01-22,BIZERTE,Road,shipping
+1081,Laptop,Electronics,Nabeul_WH4,Samsung,12.0,-100,2024-02-01,2024-02-03,2024-02-05,Monastir,Road,Pending
+1082, Desk ,Furniture,Tunis_WH1,Huawei,7.0,400,2024-02-26,2024-02-29,2024-03-03,Tunis,Air,In Transit
+1083,Monitor,Electronics,,Logitech,16.0,800,2024-02-01,2024-02-04,2024-02-06,Nabeul,Air,Delivered
+1084,desk,Furniture,Sousse_WH3,Logitech,19.0,-100,2024-01-15,2024-01-17,2024-01-19,Sousse,Road,In Transit
+1085,Mouse,Office Supplies,Sousse_WH3,Ikea,15.0,60,2024-01-23,2024-01-23,2024-01-30,Sousse,Road,Pending
+1086,Chair,Furniture,Sousse_WH3,Dell,18.0,150,2024-01-08,2024-11-01,2024-01-13,Monastir,Sea,Delivered
+1087,Chair,Furniture,Sousse_WH3,Logitech,,150,2024-01-14,2024-01-17,2024-01-21,Monastir,Sea,In Transit
+1088,Desk,Furniture,Sfax_WH2,Ikea,6.0,400,2024-01-07,2024-01-08,2024-01-11,Sousse,Air,delivered
+1089,Mouse,Office Supplies,Tunis_WH1,Huawei,10.0,99999,2024-01-09,2024-01-11,2024-01-12,Bizerte,Air,In Transit
+1090,Keyboard,Office Supplies,Sousse_WH3,HP,16.0,100,2024-01-07,2024-01-08,2024-01-13,NABEUL,Road,shipping
+1091,Laptop,Electronics,,HP,16.0,-100,2024-01-17,2024-01-19,2024-01-20,Tunis,Sea,shipping
+1092,LAPTOP,Electronics,,Dell,8.0,2500,2024-01-10,2024-01-11,2024-01-16,Tunis,Sea,shipping
+1093,Router,Electronics,,HP,15.0,300,2024-02-08,2024-02-11,2024-02-13,Sousse,Sea,Pending
+1094,Desk,Furniture,Tunis_WH1,Cisco,7.0,99999,2024-02-06,2024-02-09,2024-02-10,Bizerte,Air,shipping
+1095,Phone,Electronics,Tunis_WH1,Samsung,1.0,99999,2024-01-11,2024-01-12,2024-01-14,Nabeul,Road,In Transit
+1096,Router,Electronics,,Ikea,10.0,300,2024-01-31,2024-01-31,2024-02-03,Bizerte, Road ,Delivered
+1097,Chair,Furniture,Sfax_WH2,HP,4.0,-100,2024-02-29,2024-02-29,2024-03-07,Gabes,Air,In Transit
+1098,Tablet,Electronics,Tunis_WH1,Dell,6.0,900,2024-02-28,2024-03-01,2024-03-03,Monastir,Road,In Transit
+1099,router,Electronics,Tunis_WH1,HP,10.0,300,2024-02-28,2024-02-28,2024-03-05,Bizerte,Road,Pending
+1100,Mouse,Office Supplies,Tunis_WH1,Huawei,2.0,99999,2024-02-04,2024-02-04,2024-02-10,Nabeul,Sea,done
+1101, Router ,Electronics,Sfax_WH2,Logitech,19.0,-100,2024-01-17,2024-01-18,2024-01-19,Gabes,Air,In Transit
+1102,Desk,Furniture,Nabeul_WH4,Huawei,,-100,2024-02-06,2024-02-07,2024-02-09,Sousse,Air,In Transit
+1103,monitor,Electronics,Nabeul_WH4,Ikea,14.0,800,2024-02-10,2024-02-12,2024-02-13,Sousse,Road,done
+1104,Phone,Electronics,Nabeul_WH4,Logitech,,1200,2024-02-24,2024-02-25,2024-02-28,Sousse,Sea,Pending
+1105,mouse,Office Supplies,Sousse_WH3,Ikea,,60,2024-01-03,2024-01-05,2024-01-06,Tunis, Road ,In Transit
+1106,Laptop,Electronics,Nabeul_WH4,Dell,,2500,2024-02-12,2024-02-15,2024-02-19,Gabes,Road,In Transit
+1107,Keyboard,Office Supplies,Sfax_WH2,Ikea,18.0,100,2024-10-02,2024-10-02,2024-02-13, Sfax ,Road,Pending
+1108,Keyboard,Office Supplies,Sfax_WH2,Logitech,6.0,100,2024-01-08,2024-01-09,2024-01-14,Sousse,Sea,Delivered
+1109,MOUSE,Office Supplies,Tunis_WH1,HP,4.0,-100,2024-01-27,2024-01-27,2024-01-30,Bizerte,Air,Pending
+1110,Desk,Furniture,Nabeul_WH4,Cisco,16.0,-100,2024-02-02,2024-02-05,2024-02-08,nabeul, Air ,Pending
+1111,Mouse,Office Supplies,,Cisco,3.0,60,2024-01-10,2024-12-01,2024-01-14,Sousse,Road,Pending
+1112, Mouse ,Office Supplies,Sousse_WH3,Cisco,,60,2024-01-18,2024-01-18,2024-01-22,Gabes,Sea,Pending
+1113,Tablet,Electronics,Sousse_WH3,Ikea,18.0,900,2024-01-29,2024-01-29,2024-02-05,Monastir,Sea,delivered
+1114,Keyboard,Office Supplies,Sfax_WH2,Huawei,13.0,100,2024-02-29,2024-03-02,2024-03-04,Sfax, Road ,delivered
+1115,Printer,Office Supplies,Nabeul_WH4,Logitech,,700,2024-02-17,2024-02-19,2024-02-23,Nabeul,AIR,Delivered
+1116,Mouse,Office Supplies,Nabeul_WH4,Dell,17.0,60,2024-02-07,2024-02-09,2024-02-10,Nabeul,Air,In Transit
+1117,Tablet,Electronics,Tunis_WH1,HP,9.0,99999,2024-01-27,2024-01-30,2024-02-01,Sousse,Sea,shipping
+1118,Monitor,Electronics,Nabeul_WH4,Ikea,16.0,800,2024-02-11,2024-02-11,2024-02-15,Monastir,Sea,Delivered
+1119,Router,Electronics,Sfax_WH2,Logitech,3.0,300,2024-01-05,2024-01-06,2024-01-09,Nabeul,Air,In Transit
+1120,Phone,Electronics,Tunis_WH1,Dell,,1200,2024-01-29,2024-01-29,2024-02-02,Monastir,Air,done
+1121,Printer,Office Supplies,Sfax_WH2,Huawei,14.0,700,2024-01-24,2024-01-26,2024-01-28,Gabes,Sea,Delivered
+1122,Tablet,Electronics,Nabeul_WH4,Huawei,8.0,900,2024-01-12,2024-01-13,2024-01-18,Nabeul,Sea,Delivered
+1123,Chair,Furniture,Nabeul_WH4,Ikea,1.0,99999,2024-01-30,2024-02-02,2024-02-05,Monastir,Road,Pending
+1124,Mouse,Office Supplies,Sousse_WH3,Huawei,10.0,60,2024-01-11,2024-01-12,2024-01-16,Bizerte,Road,delivered
+1125,Desk,Furniture,Nabeul_WH4,Cisco,,400,2024-01-30,2024-02-01,2024-02-03,Tunis,air,Pending
+1126,Router,Electronics,Sousse_WH3,Dell,13.0,0,2024-01-23,2024-01-26,2024-01-29,Sousse, Air ,In Transit
+1127,Laptop,Electronics,,Cisco,8.0,0,2024-02-28,2024-02-28,2024-03-06,Gabes,Road,Delivered
+1128,chair,Furniture,Tunis_WH1,Logitech,2.0,0,2024-02-09,2024-02-11,2024-02-13,Sousse,Road,Delivered
+1129,Router,Electronics,,Ikea,,300,2024-01-24,2024-01-27,2024-01-29,Bizerte,Road,shipping
+1130,Chair,Furniture,Sousse_WH3,Cisco,6.0,150,2024-01-09,2024-01-12,2024-01-15,SOUSSE,Road,Pending
+1131,Printer,Office Supplies,Tunis_WH1,Samsung,,700,2024-02-21,2024-02-21,2024-02-26,Monastir,sea,In Transit
+1132,Monitor,Electronics,Tunis_WH1,Cisco,13.0,800,2024-02-24,2024-02-27,2024-03-01,Tunis,Road,In Transit
+1133,Phone,Electronics,Nabeul_WH4,Cisco,12.0,1200,2024-01-30,2024-01-30,2024-02-04,Tunis,sea,Delivered
+1134,Keyboard,Office Supplies,Sousse_WH3,Huawei,8.0,100,2024-01-02,2024-01-05,2024-01-10,Bizerte,Air,shipping
+1135,Keyboard,Office Supplies,Nabeul_WH4,Dell,5.0,100,2024-02-28,2024-03-02,2024-03-05, Tunis ,Air,Pending
+1136,Keyboard,Office Supplies,Sfax_WH2,HP,15.0,100,2024-01-08,2024-01-09,2024-01-11,sousse,Sea,shipping
+1137, Mouse ,Office Supplies,Nabeul_WH4,Logitech,,60,2024-01-27,2024-01-30,2024-02-01, Monastir ,Road,In Transit
+1138,Monitor,Electronics,Sousse_WH3,Samsung,15.0,-100,2024-03-01,2024-03-03,2024-03-04,Nabeul,AIR,delivered
+1139,Phone,Electronics,Sousse_WH3,Dell,13.0,1200,2024-02-13,2024-02-13,2024-02-20,Sousse,Air,Delivered
+1140,keyboard,Office Supplies,,Dell,11.0,100,2024-01-06,2024-01-09,2024-01-11,Sfax,Air,In Transit
+1141, Chair ,Furniture,Sfax_WH2,Cisco,8.0,150,2024-01-05,2024-01-08,2024-01-10,Sousse,Air,shipping
+1142,Laptop,Electronics,Sousse_WH3,Cisco,6.0,2500,2024-01-18,2024-01-19,2024-01-21,Tunis,Sea,Delivered
+1143,Tablet,Electronics,Sousse_WH3,Dell,6.0,900,2024-01-01,2024-01-03,2024-01-05,Sousse,Air,Delivered
+1144,Monitor,Electronics,Nabeul_WH4,HP,12.0,800,2024-02-03,2024-02-04,2024-02-05,Gabes,Sea,Delivered
+1145,Keyboard,Office Supplies,Tunis_WH1,Logitech,17.0,100,2024-02-02,2024-02-03,2024-02-08,Sousse,Road,In Transit
+1146,Laptop,Electronics,Nabeul_WH4,Logitech,4.0,2500,2024-01-04,2024-01-06,2024-10-01,Nabeul,Sea,Pending
+1147,Phone,Electronics,Sfax_WH2,Dell,5.0,1200,2024-02-27,2024-02-28,2024-03-02,Sousse,Sea,In Transit
+1148,Router,Electronics,Nabeul_WH4,Huawei,17.0,300,2024-02-05,2024-02-08,2024-02-11,Sousse,Road,In Transit
+1149,router,Electronics,Sfax_WH2,HP,15.0,-100,2024-01-28,2024-01-28,2024-01-30,Sfax,Road,Pending
+1150,Keyboard,Office Supplies,Sousse_WH3,HP,11.0,100,2024-01-26,2024-01-26,2024-01-29,Bizerte,Road,Pending
+1151,Tablet,Electronics,Tunis_WH1,Cisco,3.0,900,2024-02-13,2024-02-15,2024-02-16,Tunis,Road,Delivered
+1152,PRINTER,Office Supplies,Tunis_WH1,Huawei,18.0,700,2024-02-21,2024-02-22,2024-02-27,Gabes,Road,In Transit
+1153, Phone ,Electronics,Tunis_WH1,Ikea,20.0,1200,2024-01-27,2024-01-29,2024-02-02,Sousse,Road,done
+1154,Router,Electronics,Nabeul_WH4,Samsung,4.0,300,2024-02-02,2024-02-03,2024-02-05,Sousse,Sea,shipping
+1155,Phone,Electronics,Sfax_WH2,Cisco,14.0,1200,2024-02-18,2024-02-20,2024-02-25,Monastir,Sea,In Transit
+1156,router,Electronics,Tunis_WH1,Huawei,9.0,300,2024-02-13,2024-02-16,2024-02-21,Tunis,Air,Pending
+1157,Desk,Furniture,Tunis_WH1,Samsung,5.0,400,2024-02-28,2024-03-01,2024-03-04,Gabes,Sea,Pending
+1158,Phone,Electronics,,Logitech,17.0,1200,2024-01-10,2024-01-13,2024-01-14,Sfax,road,Pending
+1159,Keyboard,Office Supplies,Sousse_WH3,Logitech,11.0,100,2024-01-22,2024-01-22,2024-01-26,Monastir,Sea,In Transit
+1160,Phone,Electronics,Sfax_WH2,Cisco,20.0,1200,2024-02-26,2024-02-27,2024-02-29,Tunis,SEA,Delivered
+1161, Desk ,Furniture,Nabeul_WH4,Huawei,15.0,400,2024-01-29,2024-01-29,2024-02-05,Nabeul,Road,Delivered
+1162,Mouse,Office Supplies,Tunis_WH1,Ikea,19.0,60,2024-01-08,2024-01-10,2024-01-14, Nabeul ,Sea,In Transit
+1163,Desk,Furniture,Tunis_WH1,Dell,,400,2024-01-03,2024-01-04,2024-08-01,Sousse,Air,Delivered
+1164,Desk,Furniture,Tunis_WH1,HP,14.0,400,2024-01-19,2024-01-21,2024-01-22,Sfax,Air,Pending
+1165,Mouse,Office Supplies,Sousse_WH3,Dell,13.0,60,2024-02-15,2024-02-16,2024-02-21,monastir,SEA,Delivered
+1166,Monitor,Electronics,Sousse_WH3,Huawei,14.0,800,2024-01-02,2024-01-04,2024-01-05,Gabes,Road,shipping
+1167, Monitor ,Electronics,Tunis_WH1,Ikea,6.0,800,2024-01-19,2024-01-20,2024-01-24,monastir,Sea,Pending
+1168,Printer,Office Supplies,Sfax_WH2,HP,19.0,99999,2024-01-06,2024-01-08,2024-01-09,Nabeul,Sea,Delivered
+1169,Monitor,Electronics,Sfax_WH2,Ikea,6.0,800,2024-02-25,2024-02-27,2024-01-03,Tunis,Sea,In Transit
+1170,Phone,Electronics,Sousse_WH3,Ikea,5.0,1200,2024-02-03,2024-02-06,2024-02-08,sfax,Air,Delivered
+1171,Desk,Furniture,Sfax_WH2,Cisco,3.0,400,2024-01-13,2024-01-14,2024-01-19,Sfax,Sea,Pending
+1172,Keyboard,Office Supplies,Nabeul_WH4,Logitech,19.0,100,2024-02-18,2024-02-21,2024-02-26,Bizerte,Sea,done
+1173,Printer,Office Supplies,Sfax_WH2,HP,3.0,700,2024-02-25,2024-02-28,2024-03-02,Nabeul,Road,shipping
+1174,Desk,Furniture,Tunis_WH1,Ikea,17.0,400,2024-02-20,2024-02-20,2024-02-27,Tunis,Road,Pending
+1175,Keyboard,Office Supplies,Sousse_WH3,Dell,3.0,100,2024-01-03,2024-01-04,2024-01-07,Gabes,Sea,In Transit
+1176,MONITOR,Electronics,Tunis_WH1,HP,19.0,0,2024-01-30,2024-01-30,2024-02-07,bizerte,AIR,Pending
+1177,Router,Electronics,Tunis_WH1,HP,4.0,300,2024-01-31,2024-02-03,2024-02-05,Monastir,Road,In Transit
+1178,Phone,Electronics,Tunis_WH1,Samsung,15.0,1200,2024-02-02,2024-05-02,2024-02-07,Nabeul,Sea,In Transit
+1179,Router,Electronics,Sousse_WH3,HP,14.0,-100,2024-01-11,2024-01-13,2024-01-16,Monastir,Road,In Transit
+1180,router,Electronics,Tunis_WH1,Ikea,4.0,300,2024-01-04,2024-01-04,2024-01-10,Gabes,Sea,delivered
+1181,Desk,Furniture,Sfax_WH2,Ikea,3.0,-100,2024-01-17,2024-01-20,2024-01-25,Gabes,Sea,Delivered
+1182, Printer ,Office Supplies,Sfax_WH2,Huawei,3.0,700,2024-01-20,2024-01-23,2024-01-27,SOUSSE,Sea,Pending
+1183,Printer,Office Supplies,Tunis_WH1,Logitech,14.0,700,2024-02-22,2024-02-23,2024-02-28,Gabes,Road,Delivered
+1184,Printer,Office Supplies,,Cisco,16.0,700,2024-01-20,2024-01-20,2024-01-23,Sfax,Air,Delivered
+1185,Tablet,Electronics,Tunis_WH1,Logitech,11.0,900,2024-01-05,2024-01-07,2024-01-08,Monastir,sea,Delivered
+1186,Router,Electronics,Sfax_WH2,Cisco,,300,2024-01-25,2024-01-26,2024-01-28,Monastir,Air,In Transit
+1187,Keyboard,Office Supplies,Sfax_WH2,HP,20.0,100,2024-01-03,2024-01-05,2024-01-08,Sousse,Sea,Pending
+1188,Chair,Furniture,Nabeul_WH4,Cisco,7.0,-100,2024-02-04,2024-02-05,2024-02-08,sousse,Sea,In Transit
+1189, Keyboard ,Office Supplies,Nabeul_WH4,Samsung,7.0,100,2024-01-30,2024-02-01,2024-02-05,Monastir,Sea,Delivered
+1190,DESK,Furniture,Sousse_WH3,Huawei,4.0,400,2024-01-04,2024-07-01,2024-01-11,bizerte,Sea,Delivered
+1191,Desk,Furniture,Nabeul_WH4,Huawei,5.0,400,2024-01-06,2024-01-07,2024-01-10,MONASTIR,Road,Delivered
+1192,chair,Furniture,Tunis_WH1,HP,,150,2024-02-22,2024-02-24,2024-02-27, Nabeul ,Sea,Pending
+1193,Chair,Furniture,Sfax_WH2,Dell,11.0,150,2024-01-25,2024-01-26,2024-01-29,Tunis,Sea,In Transit
+1194,Printer,Office Supplies,Tunis_WH1,Ikea,16.0,99999,2024-02-20,2024-02-20,2024-02-23,Bizerte,Air,In Transit
+1195,Keyboard,Office Supplies,Tunis_WH1,Dell,9.0,100,2024-01-29,2024-01-29,2024-02-02,Sfax,Air,In Transit
+1196,Router,Electronics,Sousse_WH3,Samsung,10.0,300,2024-02-03,2024-02-05,2024-02-06,Tunis,Air,Delivered
+1197,Monitor,Electronics,Tunis_WH1,Dell,16.0,800,2024-02-10,2024-02-13,2024-02-17,Gabes,Sea,Delivered
+1198,Mouse,Office Supplies,Sousse_WH3,HP,1.0,60,2024-02-06,2024-02-07,2024-09-02,Gabes,Road,Delivered
+1199,Router,Electronics,Sousse_WH3,Dell,17.0,300,2024-01-27,2024-01-28,2024-01-29,Gabes,Sea,delivered
+1038,Desk,Furniture,Tunis_WH1,Logitech,18.0,400,2024-02-09,2024-02-12,2024-02-17,Sousse,Sea,Delivered
+1174,Desk,Furniture,Tunis_WH1,Ikea,17.0,400,2024-02-20,2024-02-20,2024-02-27,Tunis,Road,Pending
+1162,Mouse,Office Supplies,Tunis_WH1,Ikea,19.0,60,2024-01-08,2024-01-10,2024-01-14, Nabeul ,Sea,In Transit
+1184,Printer,Office Supplies,,Cisco,16.0,700,2024-01-20,2024-01-20,2024-01-23,Sfax,Air,Delivered
+1016,Laptop,Electronics,Sfax_WH2,Huawei,4.0,2500,2024-02-16,2024-02-19,2024-02-22,Monastir, Sea ,Pending
+1019,Router,Electronics,,Cisco,3.0,-100,2024-03-01,2024-03-02,2024-03-03,Monastir,Sea,shipping
+1132,Monitor,Electronics,Tunis_WH1,Cisco,13.0,800,2024-02-24,2024-02-27,2024-03-01,Tunis,Road,In Transit
+1076,Chair,Furniture,,Cisco,19.0,150,2024-01-07,2024-01-10,2024-01-13,Monastir, Air ,Pending
+1030,Laptop,Electronics,Sousse_WH3,HP,18.0,2500,2024-01-25,2024-01-25,2024-01-31,BIZERTE,Sea,shipping
+1022,Phone,Electronics,Sousse_WH3,Dell,19.0,1200,2024-01-16,2024-01-17,2024-01-18,GABES,Air,In Transit
+1011,Chair,Furniture,,Samsung,9.0,150,2024-02-11,2024-02-13,2024-02-17,sfax, Air ,In Transit
+1043,Laptop,Electronics,Sfax_WH2,HP,5.0,2500,2024-02-23,2024-02-25,2024-03-01,Tunis,Road,Pending
+1129,Router,Electronics,,Ikea,,300,2024-01-24,2024-01-27,2024-01-29,Bizerte,Road,shipping
+1018,Router,Electronics,Tunis_WH1,Ikea,10.0,0,2024-01-21,2024-01-23,2024-01-24,Sfax,Air,Delivered
+1134,Keyboard,Office Supplies,Sousse_WH3,Huawei,8.0,100,2024-01-02,2024-01-05,2024-01-10,Bizerte,Air,shipping
+1147,Phone,Electronics,Sfax_WH2,Dell,5.0,1200,2024-02-27,2024-02-28,2024-03-02,Sousse,Sea,In Transit
+1035,Chair,Furniture,Sousse_WH3,HP,11.0,150,2024-01-17,2024-01-19,2024-01-21,Monastir,air,done
+1171,Desk,Furniture,Sfax_WH2,Cisco,3.0,400,2024-01-13,2024-01-14,2024-01-19,Sfax,Sea,Pending
+1144,Monitor,Electronics,Nabeul_WH4,HP,12.0,800,2024-02-03,2024-02-04,2024-02-05,Gabes,Sea,Delivered
+1061,Tablet,Electronics,Sousse_WH3,Cisco,,900,2024-02-21,2024-02-23,2024-02-28,Gabes,Sea,In Transit

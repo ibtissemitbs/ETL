@@ -1,0 +1,89 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+backend.log
+
+# Environment
+.env
+.env.local
+
+# Uploads & Temp files
+uploads/*
+!uploads/.gitkeep
+data/archive/*
+!data/archive/.gitkeep
+reports/execution/*
+!reports/execution/.gitkeep
+reports/logs/*
+!reports/logs/.gitkeep
+
+# Test data
+test_*.py
+demo.py
+validate.py
+dirty_data.csv
+sample_data.csv
+sample_data.xlsx
+test_upload.csv
+
+# Documentation (keep only README.md)
+00_LISEZMOI.md
+ARCHITECTURE.md
+AUTOMATED_IA.md
+CHANGELOG_EXCEL_CSV.md
+CLEANING_IMPROVEMENTS.md
+COMPLETE_GUIDE.md
+EXECUTIVE_SUMMARY_V2.md
+FILE_INDEX.md
+FINAL_SUMMARY.md
+FLUX_EXCEL_CSV.md
+GROQ_LLM_SETUP.md
+GUIDE.md
+IA_INTELLIGENTE_V2.md
+INDEX.md
+PROJECT_COMPLETION.txt
+PROJECT_SUMMARY.md
+QUICK_START.md
+QUICK_START_AUTO.md
+RAG_GUIDE.md
+SESSION_SUMMARY.md
+SETUP.md
+START.md
+TEST_GUIDE_V2.md
+TEST_INSTRUCTIONS.md
+UPGRADE_AUTOMATED.md
+VALIDATION_CHECKLIST.md
+VERIFY.md
+VERSION_2_SUMMARY.md
+
+# Backup files
+*.backup
+*.bak
+*_OLD.py
+*_old.py
+*_backup.py

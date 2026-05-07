@@ -1,0 +1,31 @@
+{
+  "trained_columns": 9,
+  "trained_roles": [
+    "categorie",
+    "date",
+    "identifiant",
+    "numerique",
+    "texte"
+  ],
+  "trained_actions": [
+    "fill_missing",
+    "ignore",
+    "standardize_date"
+  ],
+  "feature_columns": [
+    "missing_pct",
+    "unique_pct",
+    "unique_ratio",
+    "avg_length",
+    "max_length",
+    "digit_ratio",
+    "alpha_ratio",
+    "whitespace_ratio",
+    "special_ratio",
+    "numeric_parse_ratio",
+    "date_parse_ratio",
+    "sample_count",
+    "dtype",
+    "name_token"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-05-06T23:20:44.630993",
+  "profile_summary": {
+    "n_columns": 7,
+    "n_rows": 50000,
+    "column_types": [
+      "str",
+      "string",
+      "string",
+      "float64",
+      "float64",
+      "str",
+      "string"
+    ]
+  },
+  "rules": {
+    "dataset_summary": {
+      "dataset_type": "logistics",
+      "general_quality": "medium",
+      "notes": [
+        "Fallback plan: ML heuristics used because LLM output was unavailable or invalid"
+      ]
+    },
+    "plan": [
+      {
+        "column": "status",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.9899
+      },
+      {
+        "column": "destination",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.9844
+      },
+      {
+        "column": "origin",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.9785
+      },
+      {
+        "column": "delivery_date",
+        "problem": "date parsing is inconsistent",
+        "action": "standardize_date",
+        "confidence": 0.9565
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "trained_columns": 89,
+  "best_role_model": "random_forest",
+  "best_action_model": "lightgbm",
+  "role_cv_scores": {
+    "random_forest": 0.9120183982683983,
+    "xgboost": 0.0,
+    "lightgbm": 0.7625076312576313
+  },
+  "action_cv_scores": {
+    "random_forest": 0.6122917588087866,
+    "xgboost": 0.0,
+    "lightgbm": 0.6365838001867414
+  }
+}

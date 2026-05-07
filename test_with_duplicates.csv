@@ -1,0 +1,9 @@
+shipment_id,origin,destination,weight,shipping_cost,delivery_date,status
+SH-100,China,France,10,50.5,2024-01-01,Delivered
+SH-101,USA,UK,20,100.0,2024-01-02,In Transit
+SH-102,Germany,Spain,15,75.25,2024-01-03,Pending
+SH-100,China,France,10,50.5,2024-01-01,Delivered
+SH-103,Spain,Italy,25,85.75,2024-01-05,In Transit
+SH-101,USA,UK,20,100.0,2024-01-02,In Transit
+SH-104,Italy,Germany,18,120.0,2024-01-06,Pending
+SH-102,Germany,Spain,15,75.25,2024-01-03,Pending

@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-05-06T20:29:47.453304",
+  "profile_summary": {
+    "n_columns": 7,
+    "n_rows": 45113,
+    "column_types": [
+      "str",
+      "string",
+      "string",
+      "float64",
+      "float64",
+      "datetime64[us]",
+      "string"
+    ]
+  },
+  "rules": {
+    "dataset_summary": {
+      "dataset_type": "logistics",
+      "general_quality": "medium",
+      "notes": [
+        "Fallback plan: ML heuristics used because LLM output was unavailable or invalid"
+      ]
+    },
+    "plan": [
+      {
+        "column": "customer_name",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.9934
+      },
+      {
+        "column": "product",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.9858
+      },
+      {
+        "column": "country",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.7867
+      },
+      {
+        "column": "quantity",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "order_date",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.5578
+      }
+    ]
+  }
+}

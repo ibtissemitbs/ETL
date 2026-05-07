@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-05-06T22:20:27.506717",
+  "profile_summary": {
+    "n_columns": 9,
+    "n_rows": 8,
+    "column_types": [
+      "str",
+      "string",
+      "string",
+      "float64",
+      "float64",
+      "datetime64[us]",
+      "string",
+      "bool",
+      "str"
+    ]
+  },
+  "rules": {
+    "dataset_summary": {
+      "dataset_type": "logistics",
+      "general_quality": "medium",
+      "notes": [
+        "Fallback plan: ML heuristics used because LLM output was unavailable or invalid"
+      ]
+    },
+    "plan": [
+      {
+        "column": "shipment_id",
+        "problem": "duplicate identifiers detected",
+        "action": "remove_duplicate",
+        "confidence": 0.65
+      },
+      {
+        "column": "status",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.6281
+      },
+      {
+        "column": "shipment_id",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "weight",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "__anomaly_reasons",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "__anomaly",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.55
+      }
+    ]
+  }
+}

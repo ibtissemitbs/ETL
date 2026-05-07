@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme ETL</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #7c3aed; --secondary: #06b6d4; --success: #10b981; --danger: #ef4444; --bg: #ffffff; --bg-light: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+        html.dark-mode { --bg: #121826; --bg-light: #1b2435; --text: #e5eefb; --text-light: #a8b3c7; --border: #2b3a52; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; transition: background-color 0.3s ease, color 0.3s ease; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+        html.dark-mode nav { background: rgba(18, 24, 38, 0.82); }
+        nav .brand { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; cursor: pointer; transition: color 0.3s; }
+        nav a:hover { color: var(--primary); }
+        nav button { background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--text); padding: 0.45rem 0.7rem; border-radius: 999px; border: 1px solid var(--border); }
+        nav button:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .hero { text-align: center; padding: 3rem 0; margin: 2rem 0; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 1rem; padding: 4rem 2rem; color: white; }
+        .hero h1 { font-size: 2.5rem; margin: 1rem 0; }
+        .hero p { font-size: 1.1rem; margin: 1rem 0 2rem; }
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        button { padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #6d28d9; }
+        .btn-secondary { background: var(--secondary); color: white; }
+        .btn-secondary:hover { background: #0891b2; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .feature-card { background: var(--bg-light); padding: 2rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border); }
+        .process-section { margin: 3rem 0; }
+        .process-section h2 { text-align: center; font-size: 2rem; margin: 2rem 0; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .process-card { background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(6,182,212,0.1)); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); }
+        .process-card h3 { color: var(--primary); margin-bottom: 1rem; }
+        .process-card p { color: var(--text-light); margin-bottom: 1rem; }
+        footer { text-align: center; padding: 2rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">⚡ ETL Platform</div>
+        <ul>
+            <li><a href="/dashboard">Tableau de bord</a></li>
+            <li><a href="/etl">Interface ETL</a></li>
+            <li><button id="themeToggle" type="button" aria-label="Activer le mode sombre" aria-pressed="false" title="Basculer le thème" onclick="toggleTheme()">🌙</button></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <div style="font-size: 3rem;">🚀 Plateforme ETL</div>
+            <h1>Transformez vos données en un clic</h1>
+            <p>Accueil principal de la plateforme: une vitrine claire pour accéder au dashboard et à l'espace ETL isolé.</p>
+            <div class="btn-group">
+                <button class="btn-primary" onclick="window.location.href='/etl'">▶ Ouvrir l'interface ETL</button>
+                <button class="btn-secondary" onclick="window.location.href='/dashboard'">📊 Ouvrir le dashboard</button>
+            </div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card"><div style="font-size: 2rem;">📁</div><div>CSV, Excel, JSON</div></div>
+            <div class="feature-card"><div style="font-size: 2rem;">100%</div><div>Rapports transparents</div></div>
+            <div class="feature-card"><div style="font-size: 2rem;">3</div><div>Étapes visibles</div></div>
+            <div class="feature-card"><div style="font-size: 2rem;">⚡</div><div>Temps réel</div></div>
+        </div>
+        <div class="process-section">
+            <h2>🔄 Processus</h2>
+            <div class="process-grid">
+                <div class="process-card"><h3>📥 Extraction</h3><p>Importez vos fichiers bruts</p></div>
+                <div class="process-card"><h3>⚙️ Transformation</h3><p>Nettoyage avancé des données</p></div>
+                <div class="process-card"><h3>✅ Chargement</h3><p>Export rapport détaillé</p></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Plateforme ETL</p>
+    </footer>
+    <script>
+        const themeKey = 'theme';
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.documentElement.classList.toggle('dark-mode', isDark);
+            const button = document.getElementById('themeToggle');
+            if (button) {
+                button.textContent = isDark ? '☀️' : '🌙';
+                button.setAttribute('aria-pressed', String(isDark));
+                button.setAttribute('aria-label', isDark ? 'Activer le mode clair' : 'Activer le mode sombre');
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem(themeKey) === 'dark' ? 'dark' : 'light';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem(themeKey, nextTheme);
+            applyTheme(nextTheme);
+        }
+
+        const savedTheme = localStorage.getItem(themeKey) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
+
+    </script>
+</body>
+</html>

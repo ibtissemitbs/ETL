@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme ETL</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #7c3aed; --secondary: #06b6d4; --success: #10b981; --danger: #ef4444; --bg: #ffffff; --bg-light: #f8fafc; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0; }
+        html.dark-mode { --bg: #1a1f2e; --bg-light: #252d3d; --text: #f1f5f9; --text-light: #cbd5e1; --border: #334155; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; transition: all 0.3s ease; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+        html.dark-mode nav { background: rgba(26, 31, 46, 0.7); }
+        nav .brand { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; cursor: pointer; transition: color 0.3s; }
+        nav a:hover { color: var(--primary); }
+        nav button { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .dashboard { display: block; }
+        .hero { text-align: center; padding: 3rem 0; margin: 2rem 0; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 1rem; padding: 4rem 2rem; color: white; }
+        .hero h1 { font-size: 2.5rem; margin: 1rem 0; }
+        .hero p { font-size: 1.1rem; margin: 1rem 0 2rem; }
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        button { padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #6d28d9; }
+        .btn-secondary { background: var(--secondary); color: white; }
+        .btn-secondary:hover { background: #0891b2; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .feature-card { background: var(--bg-light); padding: 2rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border); }
+        .process-section { margin: 3rem 0; }
+        .process-section h2 { text-align: center; font-size: 2rem; margin: 2rem 0; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .process-card { background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(6,182,212,0.1)); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); }
+        .process-card h3 { color: var(--primary); margin-bottom: 1rem; }
+        .process-card p { color: var(--text-light); margin-bottom: 1rem; }
+        .workspace { display: none; }
+        .workspace.active { display: block; }
+        .upload-area { border: 2px dashed var(--primary); border-radius: 1rem; padding: 3rem; text-align: center; cursor: pointer; background: var(--bg-light); transition: all 0.3s ease; }
+        .upload-area:hover { background: rgba(124, 58, 237, 0.05); }
+        #fileInput { display: none; }
+        .status { margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem; border-left: 4px solid var(--primary); display: none; }
+        .status.active { display: block; }
+        .results { margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: 0.5rem; border-left: 4px solid var(--success); }
+        .results details { margin-top: 1rem; }
+        .results ul { margin-left: 2rem; }
+        .results li { margin: 0.5rem 0; }
+        footer { text-align: center; padding: 2rem; color: var(--text-light); border-top: 1px solid var(--border); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">⚡ ETL Platform</div>
+        <ul>
+            <li><a onclick="showDashboard()">Tableau de bord</a></li>
+            <li><a onclick="showWorkspace()">Lancer ETL</a></li>
+            <li><button onclick="toggleDarkMode()">🌙</button></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="dashboard" class="dashboard">
+            <div class="hero">
+                <div style="font-size: 3rem;">🚀 Plateforme ETL</div>
+                <h1>Transformez vos données en un clic</h1>
+                <p>Une plateforme intelligente de nettoyage et transformation de données. Importez, nettoyez, exportez. Avec IA intégrée et rapports détaillés.</p>
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="showWorkspace()">▶ Lancer</button>
+                    <button class="btn-secondary" onclick="showWorkspace()">📊 Espace</button>
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><div style="font-size: 2rem;">📁</div><div>CSV, Excel, JSON</div></div>
+                <div class="feature-card"><div style="font-size: 2rem;">100%</div><div>Rapports transparents</div></div>
+                <div class="feature-card"><div style="font-size: 2rem;">3</div><div>Étapes visibles</div></div>
+                <div class="feature-card"><div style="font-size: 2rem;">⚡</div><div>Temps réel</div></div>
+            </div>
+            <div class="process-section">
+                <h2>🔄 Processus</h2>
+                <div class="process-grid">
+                    <div class="process-card"><h3>📥 Extraction</h3><p>Importez vos fichiers bruts</p></div>
+                    <div class="process-card"><h3>⚙️ Transformation</h3><p>Nettoyage avancé des données</p></div>
+                    <div class="process-card"><h3>✅ Chargement</h3><p>Export rapport détaillé</p></div>
+                </div>
+            </div>
+        </div>
+        <div id="workspace" class="workspace">
+            <h2>Espace de travail</h2>
+            <div class="upload-area" id="uploadArea" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                <h3>📤 Glissez-déposez</h3>
+                <p>ou cliquez pour sélectionner</p>
+            </div>
+            <input type="file" id="fileInput" accept=".csv,.xlsx,.xls,.json" />
+            <div id="status" class="status">
+                <h3>Traitement en cours...</h3>
+                <p id="statusText">Veuillez patienter</p>
+            </div>
+            <div id="results"></div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Plateforme ETL</p>
+    </footer>
+    <script>
+        // UI Functions
+        function toggleDarkMode() { 
+            document.documentElement.classList.toggle('dark-mode'); 
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark-mode')); 
+        }
+        function showDashboard() { 
+            document.getElementById('dashboard').style.display = 'block'; 
+            document.getElementById('workspace').classList.remove('active'); 
+        }
+        function showWorkspace() { 
+            document.getElementById('dashboard').style.display = 'none'; 
+            document.getElementById('workspace').classList.add('active'); 
+        }
+        
+        // Dark mode recovery
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark-mode');
+        }
+
+        // File handling
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const statusDiv = document.getElementById('status');
+        const statusText = document.getElementById('statusText');
+        const resultsDiv = document.getElementById('results');
+
+        uploadArea.onclick = () => fileInput.click();
+
+        function handleDragOver(e) { 
+            e.preventDefault(); 
+            uploadArea.style.background = 'rgba(124, 58, 237, 0.2)'; 
+        }
+        
+        function handleDragLeave(e) { 
+            e.preventDefault(); 
+            uploadArea.style.background = ''; 
+        }
+        
+        function handleDrop(e) { 
+            e.preventDefault(); 
+            uploadArea.style.background = ''; 
+            handleFiles(e.dataTransfer.files); 
+        }
+
+        fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+        function handleFiles(files) {
+            if (!files.length) return;
+            const file = files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            statusDiv.classList.add('active');
+            statusText.textContent = `Traitement de ${file.name}...`;
+            resultsDiv.innerHTML = '';
+
+            fetch('http://localhost:8000/upload-and-process', {
+                method: 'POST',
+                body: formData
+            })
+            .then(r => r.json())
+            .then(data => {
+                statusDiv.classList.remove('active');
+                if (data.status === 'success') {
+                    const stats = data.data_stats;
+                    const mods = data.modifications || [];
+                    resultsDiv.innerHTML = `<div class="results">
+                        <h3>✅ ${data.message}</h3>
+                        <p><strong>Fichier:</strong> ${data.filename}</p>
+                        <p><strong>Lignes traitées:</strong> ${stats.original_size} → ${stats.cleaned_size}</p>
+                        <p><strong>Qualité:</strong> ${stats.data_quality_before} → ${stats.data_quality_after} <strong>(+${stats.data_quality_improved_by})</strong></p>
+                        <p><strong>Modifications:</strong> ${mods.length} actions appliquées</p>
+                        ${mods.length > 0 ? `<details><summary>📋 Voir les modifications</summary><ul>${mods.map(m => '<li>' + m + '</li>').join('')}</ul></details>` : ''}
+                        <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button onclick="downloadCSV()" style="background: var(--success); color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer;">📥 CSV</button>
+                            <button onclick="downloadExcel()" style="background: #10b981; color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer;">📥 Excel</button>
+                        </div>
+                    </div>`;
+                } else {
+                    resultsDiv.innerHTML = `<div class="results" style="border-left-color: var(--danger);"><h3>❌ Erreur</h3><p>${data.detail || 'Erreur inconnue'}</p></div>`;
+                }
+            })
+            .catch(e => {
+                statusDiv.classList.remove('active');
+                resultsDiv.innerHTML = `<div class="results" style="border-left-color: var(--danger);"><h3>❌ Erreur réseau</h3><p>Backend non disponible: ${e.message}</p></div>`;
+            });
+        }
+
+        function downloadCSV() {
+            fetch('http://localhost:8000/export-csv', {
+                method: 'POST'
+            })
+            .then(r => r.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `cleaned_data_${new Date().getTime()}.csv`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                a.remove();
+            })
+            .catch(e => alert('Erreur téléchargement CSV: ' + e.message));
+        }
+
+        function downloadExcel() {
+            fetch('http://localhost:8000/export-excel', {
+                method: 'POST'
+            })
+            .then(r => r.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `cleaned_data_${new Date().getTime()}.xlsx`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                a.remove();
+            })
+            .catch(e => alert('Erreur téléchargement Excel: ' + e.message));
+        }
+    </script>
+</body>
+</html>

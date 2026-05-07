@@ -1,0 +1,49 @@
+# Core ETL Libraries
+pandas==2.1.4
+numpy==1.24.3
+
+# Data Input/Output
+openpyxl==3.1.2
+python-excel-io==0.1.0
+xlrd==2.0.1
+
+# API & Backend
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+aiofiles==23.2.1
+
+# Data Validation
+pydantic==2.5.0
+
+# LLM Integration  
+groq==0.5.0
+openai==1.51.2
+
+# RAG & Vector Database
+chromadb==0.4.24
+langchain==0.1.10
+langchain-openai==0.0.7
+tiktoken==0.5.2
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+scikit-learn==1.6.1
+joblib==1.4.2
+xgboost==2.1.0
+lightgbm==4.4.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Code Quality
+black==23.12.0
+flake8==6.1.0
+
+# Logging & Monitoring
+python-json-logger==2.0.7
+# Optional Excel support
+# xlrd is required for reading .xls Excel files (legacy Excel formats)
+xlrd>=2.0.1

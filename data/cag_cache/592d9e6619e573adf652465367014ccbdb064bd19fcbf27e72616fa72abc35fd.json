@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-05-06T21:25:42.835855",
+  "profile_summary": {
+    "n_columns": 7,
+    "n_rows": 20,
+    "column_types": [
+      "str",
+      "string",
+      "string",
+      "float64",
+      "float64",
+      "datetime64[us]",
+      "string"
+    ]
+  },
+  "rules": {
+    "dataset_summary": {
+      "dataset_type": "logistics",
+      "general_quality": "medium",
+      "notes": [
+        "Fallback plan: ML heuristics used because LLM output was unavailable or invalid"
+      ]
+    },
+    "plan": [
+      {
+        "column": "shipment_id",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "weight",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "shipping_cost",
+        "problem": "statistical anomaly detected",
+        "action": "mark_as_anomaly",
+        "confidence": 0.6
+      },
+      {
+        "column": "status",
+        "problem": "missing values present",
+        "action": "fill_missing",
+        "confidence": 0.5588
+      },
+      {
+        "column": "delivery_date",
+        "problem": "date parsing is inconsistent",
+        "action": "standardize_date",
+        "confidence": 0.55
+      }
+    ]
+  }
+}

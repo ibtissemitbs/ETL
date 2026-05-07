@@ -1,0 +1,190 @@
+patient_id,patient_name,age,gender,visit_date,diagnosis,blood_type,systolic_bp,glucose_mg_dl,cholesterol,phone,email,insurance
+PAT-3001,???,68,homme,2026-04-03,flu,O-,98,-80,138,+21672764241,patient1@clinic.tn,no insurance
+PAT-3002,Ahmed Trabelsi,13,F,2026-04-10,,AB+,117,152,228,+21642910282,patient2@clinic.tn,private
+PAT-3003,,1,F,2026-03-24,hypertension,O-,148,158,262,+21642371392,patient3@clinic.tn,CNAM
+PAT-3004,Mouna Kefi,76,F,2026-04-27,unknown,B+,165,212 mg/dl,268,+21643277458,patient4@clinic.tn,private
+PAT-3005,Sara Ben Ali,60,M,2026-03-29,diabetes,A+,127,999,154,+21656591531,patient5@clinic.tn,none
+PAT-3006,Ahmed Trabelsi,90,F,2026-03-11,unknown,,166,,193,+21660133569,,CNAM
+PAT-3007,Mouna Kefi,46,M,2026-03-09,flu,AB+,97,154,145,phone,patient7@clinic.tn,
+PAT-3008,Sara Ben Ali,48,F,2026-03-02,asthma,A+,164,,236,+21625438684,,private
+PAT-3009,???,26,M,,asthme,A+,106,202,167,+21695902244,patient9@clinic.tn,private
+PAT-3010,Ahmed Trabelsi,79,M,2026-04-13,hypertension,unknown,109,112,,+21622086213,,none
+PAT-3011,Ahmed Trabelsi,46,M,,unknown,O-,,90,270,+21652482294,x@,CNAM
+PAT-3012,???,80,M,2026-04-16,diabetes,A-,109,94,155,12345,patient12@clinic.tn,no insurance
+PAT-3013,Ahmed Trabelsi,15,femme,04/03/2026,asthma,o-,115,210,138,phone,patient13@clinic.tn,
+PAT-3014,Youssef Mansour,78,M,2026-03-04,,A-,,96,276,phone,patient14@clinic.tn,private
+PAT-3015,Ahmed Trabelsi,,F,2026-03-08,flu,O-,high,175,277,+21654253388,patient.com,private
+PAT-3016,Youssef Mansour,4,F,2026-03-26,unknown,A+,169,-80,214,+21687284075,patient16@clinic.tn,CNAM
+PAT-3017,Mouna Kefi,74,M,2026-04-08,asthme,unknown,107,228,200 mg/dl,+21680251070,patient.com,
+PAT-3018,Youssef Mansour,56,F,2026-04-18,flu,B+,136,111,155,+21698500947,patient18@clinic.tn,no insurance
+PAT-3019,sara ben ali ,68,,2026-04-23,asthma,AB positif,101,normal,248,+21672237687,x@,none
+PAT-3020,AHMED TRABELSI,45,Male,2026-04-11,hypertension,O-,141,192,260,+21653766262,,none
+PAT-3021,Youssef Mansour,22,F,2026-04-23,flu,AB+,115,206,-30,,patient21@clinic.tn,PRIVATE
+PAT-3022,Sara Ben Ali,,M,2026-04-27,asthme,A+,high,141,800,+21661538255,,CNAM
+PAT-3023,Mouna Kefi,49,M,2026-03-26,Diabetes ,A+,131,137,169,,,cnam 
+PAT-3024,Mouna Kefi,19,X,2026-04-05,grippe,O+,154,236,208,+21627667857,patient24@clinic.tn,private
+PAT-3025,???,19,F,,asthma,O+,168,138 mg/dl,800,+21697840866,patient25@clinic.tn,none
+PAT-3026,,33,M,,unknown,O-,115,-80,156,12345,patient26@clinic.tn,none
+PAT-3027,Youssef Mansour,35,M,2026-03-28,,A+,165,229,130,+21676681097,,none
+PAT-3028,AHMED TRABELSI,73,F,14/03/2026,asthme,unknown,171,222,121,,,
+PAT-3029,,7,F,21/03/2026,asthma,B+,112,136,,+21655609212,patient29@clinic.tn,private
+,Ahmed Trabelsi,old,M,2026-04-10,hypertension,O-,169,93,-30,,patient30@clinic.tn,none
+PAT-3031,Ahmed Trabelsi,68,homme,2026-03-26,anemia,O-,136,101,228,+21692668141,patient31@clinic.tn,private
+PAT-3032,AHMED TRABELSI,36,F,2026-04-09,flu,B+,130 mmHg,200,192,12345,patient32@clinic.tn,none
+PAT-3033,Youssef Mansour,70,M,,hypertension,A+,,82,168,+21641958273,patient33@clinic.tn,no insurance
+,,60,X,2026-03-05,anemia,A+,138,96,279,+21657632148,patient34@clinic.tn,
+PAT-3035,Ahmed Trabelsi,,F,2026-04-07,anemia,AB+,166,-80,186,+21627334901,patient35@clinic.tn,private
+PAT-3036,AHMED TRABELSI,44,F,2026-04-27,asthma,O+,97,155,189,+21634931115,patient36@clinic.tn,none
+PAT-3037,Ahmed Trabelsi,2,M,,diabetes,A-,175,104,217,+21658020566,x@,CNAM
+PAT-3038,sara ben ali ,30,M,,diabetes,B+,high,219,163,,patient38@clinic.tn,CNAM
+PAT-3039,AHMED TRABELSI,31,X,2026-04-16,,AB+,-120,175,277,+21675280248,,none
+PAT-3040,Sara Ben Ali,55,M,2026-03-16,asthma,A-,,214,263,+21657201803,patient.com,private
+,Mouna Kefi,8,F,2026-03-20,hypertension,O+,97,213,200 mg/dl,+21688255980,patient41@clinic.tn,private
+PAT-3042,Sara Ben Ali,,M,2026-03-28,hypertension,A+,99,,227,+21685749277,x@,none
+PAT-3043,Mouna Kefi,21,female,2026-03-20,,A+,300,,,12345,patient43@clinic.tn,none
+PAT-3044,Sara Ben Ali,16,F,,hypertension,B+,132 mmHg,211,155,+21656968086,patient.com,CNAM
+PAT-3045,Ahmed Trabelsi,,F,2026-04-10,hypertension,O-,179,71 mg/dl,194,,patient45@clinic.tn,CNAM
+PAT-3046,Sara Ben Ali,52,Male,2026-03-23,anemia,A+,120,124,125,+21676444322,,none
+PAT-3047,Ahmed Trabelsi,22,M,2026-04-12,diabetes,O-,109,155,179,+21652963684,patient47@clinic.tn,
+PAT-3048,Sara Ben Ali,12,F,not date,flu,A-,143,,201,+21632670380,patient48@clinic.tn,no insurance
+PAT-3049,Sara Ben Ali,35,M,not date,unknown,A+,124,,186,,patient49@clinic.tn,CNAM
+pat-3050,Sara Ben Ali,-7,Male,2026-04-21,Diabetes ,O+,108,142,-30,+21694193473,patient50@clinic.tn,none
+PAT-3051,Mouna Kefi,91,M,,flu,AB+,high,normal,129,,patient51@clinic.tn,CNAM
+PAT-3052,Youssef Mansour,66,M,2026-03-25,grippe,A plus,,102,214,+21698649101,patient52@clinic.tn,private
+PAT-3053,Youssef Mansour,65,F,15/04/2026,flu,AB positif,174,123,244,+21641609907,patient53@clinic.tn,none
+PAT-3054,Youssef Mansour,3,F,2026-04-04,asthma,,135,203,144,+21663193996,patient54@clinic.tn,none
+PAT-3055,sara ben ali ,8,M,2026-03-21,diabetes,A-,high,94,198,+21695013292,patient55@clinic.tn,private
+PAT-3056,???,60,M,2026-03-12,hypertension,O+,-120,197,200 mg/dl,+21622322523,patient56@clinic.tn,private
+PAT-3057,AHMED TRABELSI,13,F,2026-03-31,diabetes,A+,172,89,,+21671173179,patient57@clinic.tn,CNAM
+PAT-3058,sara ben ali ,63,Male,2026-03-06,asthme,A+,126,-80,162,,patient58@clinic.tn,private
+PAT-3059,Mouna Kefi,60,M,2026-03-23,flu,A+,177,100,,+21638392993,patient59@clinic.tn,cnam 
+PAT-3060,Mouna Kefi,10,F,2026-03-25,flu,,96,195,800,+21638268849,patient60@clinic.tn,none
+PAT-3061,Youssef Mansour,31,F,2026-04-25,flu,AB+,173,152,-30,+21694085474,patient61@clinic.tn,none
+PAT-3062,Sara Ben Ali,21,homme,2026-03-09,flu,A plus,122,184,,+21640020303,,private
+PAT-3063,Mouna Kefi,16,F,2026-04-29,,B+,98,73,222,+21663570727,patient63@clinic.tn,none
+PAT-3064,Youssef Mansour,17,female,2026-04-06,anemia,AB+,146,999,243,+21638321829,patient.com,none
+PAT-3065,Youssef Mansour,50,F,2026-04-06,Diabetes ,O-,157,131,126,,,CNAM
+PAT-3066,Sara Ben Ali,86,F,2026-03-14,anemia,A-,165,155,252,+21667378941,patient66@clinic.tn,CNAM
+PAT-3067,Ahmed Trabelsi,-55,M,2026-03-02,hypertension,O-,156,218,198,+21664194441,,private
+PAT-3068,,87,F,2026-04-27,flu,,133,202,-30,+21667246348,patient.com,none
+PAT-3069,Youssef Mansour,85,F,,hypertension,A+,179,151,279,+21688660194,patient69@clinic.tn,
+PAT-3070,Ahmed Trabelsi,60,F,2026-03-11,flu,AB+,157 mmHg,normal,171,+21688802303,,private
+PAT-3071,Ahmed Trabelsi,55,M,not date,diabetes,,120,103,171,+21699916795,patient71@clinic.tn,CNAM
+PAT-3072,Sara Ben Ali,,X,2026-04-09,diabetes,A plus,146,226,800,+21636177172,patient.com,none
+PAT-3073,Ahmed Trabelsi,42,female,2026-03-13,anemia,B+,158,86,239,+21632485000,patient73@clinic.tn,private
+PAT-3074,Sara Ben Ali,41,,2026-03-01,hypertension,A-,96,129,167,+21640060188,patient74@clinic.tn,none
+PAT-3075,Sara Ben Ali,10,F,not date,hypertension,O-,152,90,147,,patient75@clinic.tn,no insurance
+PAT-3076,Sara Ben Ali,34,M,2026-03-08,asthma,A-,153 mmHg,-80,198,12345,,none
+PAT-3077,Mouna Kefi,60,M,2026-03-23,hypertension,,139,138,279,+21672492736,patient77@clinic.tn,private
+PAT-3078,Ahmed Trabelsi,,,2026-04-06,asthma,A-,102,146,206,+21631963776,patient78@clinic.tn,private
+PAT-3079,Ahmed Trabelsi,51,M,2026-03-24,diabetes,A+,118,86 mg/dl,800,+21656847763,patient79@clinic.tn,CNAM
+PAT-3080,Ahmed Trabelsi,21,F,2026-04-09,diabetes,AB+,152,228,229,+21645568906,patient80@clinic.tn,none
+pat-3081,Ahmed Trabelsi,52,femme,2026-03-15,anemia,A+,177,204,-30,+21667637042,patient81@clinic.tn,CNAM
+PAT-3082,???,58,M,2026-03-05,anemia,A+,99,163,200 mg/dl,+21646683911,patient82@clinic.tn,no insurance
+PAT-3083,Ahmed Trabelsi,old,X,2026-03-10,hypertension,,132,normal,231,+21680966110,patient83@clinic.tn,none
+PAT-3084,Youssef Mansour,8,F,2026-04-09,asthma,A plus,119,normal,168,+21643250723,x@,private
+PAT-3085,Sara Ben Ali,68,F,2026-03-14,flu,AB+,135,191 mg/dl,238,,patient85@clinic.tn,no insurance
+PAT-3086,Sara Ben Ali,10,homme,31-31-2026,asthme,A+,130,normal,200 mg/dl,+21668190951,patient86@clinic.tn,
+PAT-3087,AHMED TRABELSI,2,M,2026-04-23,HTA,A+,107,229,214,+21620981883,,
+PAT-3088,,11,M,10/03/2026,Diabetes ,AB+,high,86,265,+21645192630,patient88@clinic.tn,private
+PAT-3089,Sara Ben Ali,73,F,2026-03-25,asthma,O-,153,147,,12345,patient.com,CNAM
+PAT-3090,,89,F,2026-04-19,asthma,A-,-120,,151,+21671217069,patient90@clinic.tn,none
+PAT-3091,Youssef Mansour,old,F,2026-04-04,anemia,A-,126,188 mg/dl,158,phone,patient91@clinic.tn,private
+PAT-3092,???,12,M,2026-04-10,unknown,A-,,87,268,+21641654924,patient92@clinic.tn,CNAM
+PAT-3093,sara ben ali ,21,Male,2026-03-08,asthma,B+,-120,173,200 mg/dl,,patient93@clinic.tn,private
+PAT-3094,Mouna Kefi,86,M,22/03/2026,asthme,A-,,161,148,+21659501580,,none
+PAT-3095,Ahmed Trabelsi,150,F,2026-03-02,HTA,AB+,123,249,-30,+21645137138,patient95@clinic.tn,
+PAT-3096,Ahmed Trabelsi,-23,F,2026-03-24,Diabetes ,,138,,200 mg/dl,+21655908279,patient96@clinic.tn,cnam 
+PAT-3097,sara ben ali ,3,F,23/04/2026,anemia,B+,-120,92,276,+21620029725,,cnam 
+PAT-3098,Mouna Kefi,39,F,,HTA,AB positif,,197,230,+21639748999,patient98@clinic.tn,none
+PAT-3099,Ahmed Trabelsi,150,femme,16/03/2026,diabetes,A-,166,normal,800,+21653121540,patient99@clinic.tn,CNAM
+PAT-3100,Mouna Kefi,3,F,2026-03-01,hypertension,A-,98,173,183,+21625627745,,none
+PAT-3101,,89,M,2026-03-10,flu,AB+,115,197,,+21622253722,patient101@clinic.tn,private
+PAT-3102,,66,F,10/04/2026,hypertension,A+,107,206 mg/dl,800,+21638458857,patient102@clinic.tn,CNAM
+PAT-3103,AHMED TRABELSI,-90,F,2026-04-27,flu,AB+,148,81,133,phone,,cnam 
+pat-3104,Ahmed Trabelsi,20,F,2026-03-11,asthma,AB+,110,139,175,12345,patient104@clinic.tn,CNAM
+pat-3105,Youssef Mansour,58,M,2026-03-04,hypertension,A+,98,-80,257,,patient.com,none
+PAT-3106,Youssef Mansour,150,female,not date,anemia,o-,179 mmHg,,800,phone,patient106@clinic.tn,cnam 
+PAT-3107,Sara Ben Ali,74,female,2026-04-07,diabetes,B+,140,73,176,+21674432684,patient.com,private
+PAT-3108,Sara Ben Ali,20,F,2026-03-17,anemia,A+,high,,-30,+21639992066,patient108@clinic.tn,PRIVATE
+PAT-3109,Mouna Kefi,150,M,2026-04-06,diabetes,AB+,,124,251,+21661822973,patient109@clinic.tn,CNAM
+PAT-3110,Mouna Kefi,24,F,2026-04-03,hypertension,unknown,124,-80,266,+21673899323,patient110@clinic.tn,private
+PAT-3111,Ahmed Trabelsi,19,,2026-04-18,flu,o-,157,179,269,,patient111@clinic.tn,private
+PAT-3112,Sara Ben Ali,76,F,2026-03-30,hypertension,B+,152,186,,+21674248291,patient112@clinic.tn,private
+PAT-3113,AHMED TRABELSI,64,M,not date,diabetes,O-,142,242,213,phone,patient113@clinic.tn,CNAM
+PAT-3114,Sara Ben Ali,55,F,2026-04-02,flu,,,132,235,phone,,CNAM
+PAT-3115,Youssef Mansour,92,female,,asthma,o-,141,126,237,+21695441964,patient115@clinic.tn,private
+PAT-3116,Youssef Mansour,33,,2026-03-17,hypertension,AB+,164,73,,+21638904815,patient116@clinic.tn,
+PAT-3117,Sara Ben Ali,47,F,2026-03-27,HTA,AB+,109,116,,phone,patient117@clinic.tn,none
+PAT,Sara Ben Ali,9,F,2026-03-26,flu,B+,110,138,180,phone,patient118@clinic.tn,
+PAT-3119,Youssef Mansour,50,M,2026-03-03,diabetes,A+,171,176,232,+21663682501,patient119@clinic.tn,CNAM
+PAT-3120,Sara Ben Ali,81,homme,2026-04-28,grippe,A+,145,216,154,+21649168537,patient120@clinic.tn,no insurance
+PAT-3121,Mouna Kefi,69,M,2026-03-29,flu,A+,158,-80,168,+21681069572,patient121@clinic.tn,none
+PAT-3122,,,M,2026-03-26,anemia,AB+,98,195,158,phone,x@,
+PAT-3123,Mouna Kefi,150,female,2026-03-24,unknown,AB+,151,169,-30,+21631416757,patient123@clinic.tn,PRIVATE
+PAT-3124,Ahmed Trabelsi,46,M,2026-04-29,HTA,unknown,154,,-30,+21690321747,patient124@clinic.tn,no insurance
+PAT-3125,Ahmed Trabelsi,24,F,2026-03-25,grippe,O+,130,227,800,phone,patient125@clinic.tn,none
+PAT,Mouna Kefi,30,,2026-03-22,Diabetes ,unknown,101,999,-30,phone,x@,private
+PAT-3127,Sara Ben Ali,80,M,2026-03-16,flu,O+,148,,189,+21632310059,patient127@clinic.tn,none
+PAT-3128,Youssef Mansour,73,M,2026-04-14,anemia,A-,150,176,-30,+21620805113,patient128@clinic.tn,private
+PAT-3129,Mouna Kefi,150,M,2026-03-21,asthme,o-,300,247,126,,patient129@clinic.tn,no insurance
+PAT-3130,,82,F,2026-04-01,flu,A+,169,217,262,+21650647215,x@,none
+PAT-3131,Sara Ben Ali,71,F,2026-03-21,unknown,,high,normal,239,+21663627391,patient131@clinic.tn,no insurance
+PAT-3132,Sara Ben Ali,14,M,2026-04-26,diabetes,A plus,131 mmHg,999,140,+21648046417,patient.com,CNAM
+PAT-3133,Sara Ben Ali,69,M,03/03/2026,asthme,AB+,131,118,-30,+21633981528,,CNAM
+PAT-3134,Youssef Mansour,85,F,2026-03-12,asthma,AB+,300,238,236,+21648204739,x@,
+,Ahmed Trabelsi,71,Male,2026-03-22,anemia,B+,127,150,,phone,,private
+PAT-3136,Ahmed Trabelsi,150,femme,2026-04-27,anemia,A-,137 mmHg,normal,200 mg/dl,+21695542704,patient136@clinic.tn,private
+PAT-3137,Sara Ben Ali,old,M,not date,,O+,164,167,184,+21660907604,patient137@clinic.tn,private
+PAT-3138,Sara Ben Ali,5,female,2026-03-02,Diabetes ,unknown,116,181,176,,patient138@clinic.tn,CNAM
+PAT-3139,Mouna Kefi,74,X,2026-04-03,anemia,B+,110,,-30,+21680910677,patient139@clinic.tn,CNAM
+PAT-3140,,76,F,2026-03-24,anemia,O+,134,107 mg/dl,200 mg/dl,+21659993954,patient140@clinic.tn,CNAM
+PAT-3141,Ahmed Trabelsi,,M,2026-04-20,anemia,O+,157,118,151,+21657026182,patient141@clinic.tn,none
+PAT-3142,???,21,homme,2026-03-20,hypertension,,120,196,200 mg/dl,,patient142@clinic.tn,private
+PAT-3143,Youssef Mansour,86,F,2026-03-15,asthma,O+,179,,235,+21643593741,patient143@clinic.tn,private
+PAT-3144,Mouna Kefi,27,M,31-31-2026,anemia,O-,high,127,147,12345,patient.com,CNAM
+PAT,AHMED TRABELSI,3,M,2026-03-08,Diabetes ,AB+,138,,161,+21693418978,,CNAM
+PAT-3146,Youssef Mansour,6,M,2026-04-08,hypertension,AB+,146,-80,208,+21643278769,,CNAM
+PAT-3147,Youssef Mansour,43,X,2026-03-19,asthma,AB+,163,120,130,+21689863927,patient.com,PRIVATE
+PAT-3148,Mouna Kefi,12,X,2026-03-10,,,,221,200 mg/dl,+21684825507,patient148@clinic.tn,CNAM
+PAT-3149,Mouna Kefi,85,X,2026-03-08,diabetes,,149,,166,,patient149@clinic.tn,CNAM
+PAT-3150,sara ben ali ,48,female,2026-04-15,anemia,A+,176,111,-30,+21656073939,patient150@clinic.tn,none
+PAT-3151,Sara Ben Ali,70,,2026-03-12,hypertension,AB+,96,76,199,+21677678210,patient151@clinic.tn,none
+PAT-3152,Sara Ben Ali,3,homme,,diabetes,A+,134,230,800,+21629163766,patient152@clinic.tn,none
+,Mouna Kefi,8,F,2026-04-06,flu,A-,126,193,226,+21622843236,patient153@clinic.tn,private
+PAT-3154,,4,M,,anemia,AB+,164,179,138,+21651853087,x@,cnam 
+PAT-3155,Youssef Mansour,,Male,2026-03-12,flu,O+,300,,800,+21669439294,patient155@clinic.tn,CNAM
+PAT-3156,???,21,F,2026-03-30,,A-,107,231,200 mg/dl,+21649754469,patient156@clinic.tn,PRIVATE
+PAT-3157,Mouna Kefi,59,F,2026-04-24,anemia,A-,121,138,144,+21622592536,patient.com,private
+PAT-3158,Sara Ben Ali,,homme,,anemia,A-,120,195,252,+21640218082,patient158@clinic.tn,CNAM
+NULL,Ahmed Trabelsi,61,M,28/03/2026,anemia,B+,high,185,253,+21661156155,,none
+pat-3160,Sara Ben Ali,44,F,,anemia,A+,105,,200 mg/dl,+21626703560,,private
+PAT-3161,sara ben ali ,-85,M,2026-03-24,anemia,O+,97,145,149,,,
+PAT-3162,???,old,F,31-31-2026,HTA,A+,156,230,153,+21638001960,,private
+PAT-3163,Sara Ben Ali,51,M,2026-04-16,hypertension,B+,176,127,194,+21683349631,patient163@clinic.tn,none
+PAT-3164,Mouna Kefi,22,M,31-31-2026,,o-,163,177,-30,+21664474126,patient164@clinic.tn,private
+,Mouna Kefi,91,,2026-04-04,grippe,O+,high,normal,135,+21674089633,,CNAM
+PAT-3166,Mouna Kefi,66,F,2026-04-04,anemia,O+,134,225,166,+21666737861,patient166@clinic.tn,none
+PAT-3167,Youssef Mansour,73,homme,2026-03-20,Diabetes ,B+,95,-80,247,+21696802238,patient167@clinic.tn,CNAM
+PAT-3168,Mouna Kefi,67,X,2026-03-04,asthma,O+,152,222,166,+21691415950,patient168@clinic.tn,CNAM
+PAT-3169,Sara Ben Ali,63,M,2026-03-21,asthma,B+,151,-80,,+21659722995,patient.com,CNAM
+PAT-3170,AHMED TRABELSI,,M,not date,anemia,A+,high,214 mg/dl,800,+21650912354,patient170@clinic.tn,none
+PAT-3171,,77,M,2026-03-15,asthma,B+,176 mmHg,184,,phone,patient171@clinic.tn,none
+PAT-3172,Mouna Kefi,91,F,23/03/2026,diabetes,A-,153,160,217,+21661040759,patient.com,none
+PAT-3173,Youssef Mansour,,M,2026-04-07,asthme,AB+,108,169,191,+21636530109,patient.com,private
+PAT-3174,Youssef Mansour,-35,F,2026-03-19,anemia,O-,124,147,,+21697309808,,none
+PAT-3175,Ahmed Trabelsi,25,M,2026-04-09,flu,A-,108,-80,221,,patient175@clinic.tn,
+PAT-3176,,48,F,not date,flu,AB+,177,179,250,phone,patient176@clinic.tn,none
+PAT-3177,sara ben ali ,19,M,2026-03-09,asthma,O-,122,242,,+21654020414,patient177@clinic.tn,none
+PAT-3178,Youssef Mansour,73,F,31-31-2026,flu,O-,113,244,800,+21689518245,patient178@clinic.tn,CNAM
+PAT-3179,Sara Ben Ali,53,X,2026-04-05,Diabetes ,O-,high,99,-30,+21673274943,patient179@clinic.tn,private
+PAT-3180,Youssef Mansour,,F,2026-04-25,HTA,B+,300,158,261,12345,patient180@clinic.tn,none
+PAT-3026,,33,M,,unknown,O-,115,-80,156,12345,patient26@clinic.tn,none
+PAT-3004,Mouna Kefi,76,F,2026-04-27,unknown,B+,165,212 mg/dl,268,+21643277458,patient4@clinic.tn,private
+PAT-3083,Ahmed Trabelsi,old,X,2026-03-10,hypertension,,132,normal,231,+21680966110,patient83@clinic.tn,none
+PAT-3178,Youssef Mansour,73,F,31-31-2026,flu,O-,113,244,800,+21689518245,patient178@clinic.tn,CNAM
+PAT-3157,Mouna Kefi,59,F,2026-04-24,anemia,A-,121,138,144,+21622592536,patient.com,private
+PAT-3133,Sara Ben Ali,69,M,03/03/2026,asthme,AB+,131,118,-30,+21633981528,,CNAM
+PAT-3007,Mouna Kefi,46,M,2026-03-09,flu,AB+,97,154,145,phone,patient7@clinic.tn,
+PAT-3087,AHMED TRABELSI,2,M,2026-04-23,HTA,A+,107,229,214,+21620981883,,
+PAT-3071,Ahmed Trabelsi,55,M,not date,diabetes,,120,103,171,+21699916795,patient71@clinic.tn,CNAM

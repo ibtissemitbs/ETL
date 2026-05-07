@@ -1,0 +1,37 @@
+{
+  "project": {
+    "name": "ETL + LLM Academic Pipeline",
+    "version": "1.0.0",
+    "description": "Automated ETL pipeline enhanced with LLM-driven transformations"
+  },
+  "paths": {
+    "data_input": "data/in",
+    "data_output": "data/processed",
+    "data_archive": "data/archive",
+    "data_reject": "data/reject",
+    "reports_profiling": "reports/profiling",
+    "reports_execution": "reports/execution",
+    "reports_logs": "reports/logs"
+  },
+  "llm": {
+    "provider": "groq",
+    "model": "mixtral-8x7b-32768",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "extraction": {
+    "supported_formats": [".csv", ".xlsx", ".xls"],
+    "encoding": "utf-8",
+    "fallback_encoding": "latin-1"
+  },
+  "transformation": {
+    "remove_duplicates": true,
+    "fill_nulls": true,
+    "normalize_text": true
+  },
+  "validation": {
+    "check_empty": true,
+    "check_duplicates": true,
+    "generate_profile": true
+  }
+}
