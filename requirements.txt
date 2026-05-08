@@ -4,7 +4,6 @@ numpy==1.24.3
 
 # Data Input/Output
 openpyxl==3.1.2
-python-excel-io==0.1.0
 xlrd==2.0.1
 
 # API & Backend
