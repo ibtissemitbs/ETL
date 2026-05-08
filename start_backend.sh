@@ -1,33 +1,22 @@
-#!/bin/bash
-# ETL Platform - Démarrage du serveur backend
+#!/usr/bin/env bash
+set -euo pipefail
 
-echo ""
-echo "===================================="
-echo "  🔧 ETL Platform - Backend Server"
-echo "===================================="
-echo ""
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PY="$ROOT/.venv/bin/python"
 
-# Vérifier que nous sommes dans le bon répertoire
-if [ ! -f "backend/main.py" ]; then
-    echo "❌ Erreur: main.py non trouvé!"
-    echo "   Exécutez ce script depuis le dossier ETL"
-    exit 1
+if [ ! -x "$PY" ]; then
+  echo "Python environment not found: $PY"
+  echo "Run:"
+  echo "  python -m venv .venv"
+  echo "  .venv/bin/python -m pip install -r requirements.txt"
+  exit 1
 fi
 
-# Aller dans le dossier backend
-cd backend
+cd "$ROOT"
+echo "Starting ETL Platform backend..."
+echo "API:  http://127.0.0.1:8000"
+echo "Docs: http://127.0.0.1:8000/docs"
+echo "Press CTRL+C to stop."
+echo
 
-if [ ! -x "../.venv/Scripts/python.exe" ]; then
-    echo "❌ Python du projet introuvable: .venv/Scripts/python.exe"
-    exit 1
-fi
-
-echo "✓ Démarrage du serveur..."
-echo ""
-echo "📍 Backend disponible sur: http://localhost:8000"
-echo "📚 Documentation API: http://localhost:8000/docs"
-echo "🛑 Appuyez sur CTRL+C pour arrêter le serveur"
-echo ""
-
-# Lancer le serveur avec le Python du projet pour garantir les dépendances
-"../.venv/Scripts/python.exe" -m uvicorn main:app --host 0.0.0.0 --port 8000
+"$PY" -m uvicorn backend.main:app --host 0.0.0.0 --port 8000

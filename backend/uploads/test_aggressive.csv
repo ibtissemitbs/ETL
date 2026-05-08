@@ -1,5 +1,0 @@
-customer_id,product_name,price,quantity,order_date
-CUST001,Widget,100.50,5,2024-01-15
-CUST002,Gadget,99.99,-2,2024/01/20
-CUST001,Widget,100.50,10,15-01-2024
-CUST003,Component,Invalid,3,2025-12-25

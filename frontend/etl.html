@@ -114,7 +114,9 @@
         const statusDiv = document.getElementById('status');
         const statusText = document.getElementById('statusText');
         const resultsDiv = document.getElementById('results');
+        const PROCESSING_TIMEOUT_MS = 10 * 60 * 1000;
         let lastRunId = null;
+        let isProcessing = false;
 
         function normalizeText(value) {
             return String(value || '')
@@ -266,8 +268,10 @@
         }
 
         function handleFiles(files) {
-            if (!files.length) return;
+            if (!files.length || isProcessing) return;
             const file = files[0];
+            fileInput.value = '';
+            isProcessing = true;
             const formData = new FormData();
             formData.append('file', file);
             const selectedDomain = domainSelect?.value || '';
@@ -280,9 +284,13 @@
             statusText.textContent = selectedDomain ? `Traitement de ${file.name} (${selectedDomain})...` : `Traitement de ${file.name}...`;
             resultsDiv.innerHTML = '';
 
+            const controller = new AbortController();
+            const timeoutId = window.setTimeout(() => controller.abort(), PROCESSING_TIMEOUT_MS);
+
             fetch(endpoint, {
                 method: 'POST',
-                body: formData
+                body: formData,
+                signal: controller.signal
             })
                 .then(async r => {
                     const payload = await r.json();
@@ -347,8 +355,15 @@
                     `;
                 })
                 .catch(e => {
+                    const message = e.name === 'AbortError'
+                        ? 'Le traitement a depasse le delai maximal. Redemarrez le backend puis reessayez avec un fichier plus leger ou converti en CSV.'
+                        : `Verifiez que l'API tourne sur ${API_BASE}. Detail: ${e.message}`;
+                    resultsDiv.innerHTML = `<div class="results" style="border-left-color: var(--danger);"><h3>Traitement interrompu</h3><p>${message}</p></div>`;
+                })
+                .finally(() => {
+                    window.clearTimeout(timeoutId);
                     statusDiv.classList.remove('active');
-                    resultsDiv.innerHTML = `<div class="results" style="border-left-color: var(--danger);"><h3>Impossible de joindre le backend</h3><p>Verifiez que l'API tourne sur ${API_BASE}. Detail: ${e.message}</p></div>`;
+                    isProcessing = false;
                 });
         }
 

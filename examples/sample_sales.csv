@@ -1,0 +1,6 @@
+order_id,customer_name,product,price,quantity,order_date,country
+ORD-001,Alice Martin,Laptop,1200,1,2026-01-12,France
+ORD-002, Bob Smith ,Phone,-350,2,2026-01-14,USA
+ORD-003,,Tablet,450,1,not-a-date,Tunisia
+ORD-003,,Tablet,450,1,not-a-date,Tunisia
+ORD-004,Invalid,Mouse,abc,3,2026-02-01,Spain

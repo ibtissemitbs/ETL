@@ -1,149 +1,316 @@
-﻿# 🚀 ETL Platform - Intelligent Data Cleaning
+# ETL Platform
 
-A modern, web-based ETL platform for automated data cleaning with AI-powered quality analysis and a plan-only LLM strategy.
+Plateforme web FastAPI pour profiler, nettoyer et exporter des datasets CSV, Excel et JSON. Le projet combine des règles déterministes, des règles métier, une couche ML légère, un plan LLM optionnel, un moteur RAG et un cache CAG.
 
-## Features
+Le LLM ne modifie jamais les données directement. Il produit uniquement un plan JSON validé, puis le moteur de règles applique les transformations autorisées de façon déterministe.
 
-✅ **Automatic Data Cleaning** - Remove duplicates, handle missing values, standardize types  
-✅ **Data Profiling** - Analyze schemas and data quality  
-✅ **AI Integration** - RAG + LLM plan suggestion, never direct data mutation  
-✅ **CAG Engine** - Intelligent caching of LLM plans to reduce API costs by 60-80%  
-✅ **Quality Reports** - Before/after analysis with improvement scores  
-✅ **Multi-format Support** - CSV, Excel, JSON  
-✅ **Export Options** - Download cleaned data in multiple formats  
-✅ **Modern UI** - Responsive design with dark mode  
+## Fonctionnalités
+
+- Upload de fichiers CSV, XLSX, XLS et JSON.
+- Profiling automatique: types, valeurs nulles, doublons, ratios numériques/date, qualité globale.
+- Détection de domaine: `sales`, `logistics` ou `generic`.
+- Nettoyage déterministe avec protection des identifiants et colonnes financières.
+- Règles métier dédiées Sales / CRM et Logistics / Supply Chain.
+- RAG pour enrichir le prompt avec des règles pertinentes.
+- CAG pour mettre en cache les plans de transformation par profil de dataset.
+- Exports CSV et Excel.
+- Frontend statique servi par FastAPI: accueil, workspace ETL, dashboard.
+
+## Stack
+
+- Backend: FastAPI, Pandas, NumPy, Pydantic.
+- Frontend: HTML, CSS, JavaScript sans build step.
+- ML: scikit-learn, joblib, modèles pré-entraînés dans `models/`.
+- LLM: OpenAI, Groq ou Ollama local.
+- RAG: ChromaDB si disponible, fallback mémoire sinon.
+- Tests: pytest.
+
+## Installation
+
+```powershell
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install --upgrade pip
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+Sur Linux/macOS:
+
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+Copier la configuration optionnelle:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Les clés LLM sont optionnelles. Sans clé, le système utilise les règles fallback déterministes.
+
+## Démarrage
+
+Windows:
+
+```powershell
+.\start_backend.bat
+```
+
+Linux/macOS:
+
+```bash
+./start_backend.sh
+```
+
+Ou directement:
+
+```powershell
+.venv\Scripts\python.exe -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
+```
+
+URLs:
+
+- Application: `http://127.0.0.1:8000/`
+- Workspace ETL: `http://127.0.0.1:8000/etl`
+- Dashboard: `http://127.0.0.1:8000/dashboard`
+- API docs: `http://127.0.0.1:8000/docs`
+
+Pour tester rapidement:
+
+```powershell
+.venv\Scripts\python.exe scripts\upload_sample.py
+```
 
 ## Architecture
 
-Dirty Data → Profiler → ML Column Role Detection → ML Anomaly Detection → RAG + LLM Plan Suggestion → Rules Engine Validation → Deterministic Transformation → Quality Check → Report
+```text
+ETL/
+├── backend/
+│   ├── main.py              # API FastAPI, routes frontend, upload, export
+│   └── uploads/.gitkeep     # fichiers runtime ignorés par Git
+├── frontend/
+│   ├── index.html           # accueil
+│   ├── etl.html             # upload et résultats
+│   └── dashboard.html       # dernier rapport
+├── src/
+│   ├── extract.py           # lecture CSV/Excel/JSON
+│   ├── profiler.py          # profil dataset et score de qualité
+│   ├── domain_context.py    # détection Sales/Logistics/Generic
+│   ├── hybrid_ml.py         # prédiction rôles/actions/anomalies
+│   ├── llm_helper.py        # prompt, clients LLM, fallback, validation plan
+│   ├── rag_engine.py        # règles RAG via ChromaDB ou mémoire
+│   ├── cag_engine.py        # cache de plans par profil
+│   ├── rules_engine.py      # règles déterministes partagées
+│   ├── transform.py         # application du plan validé
+│   ├── sales_domain_cleaner.py
+│   ├── logistics_domain_cleaner.py
+│   ├── data_structure_detector.py
+│   └── load.py
+├── config/
+│   ├── settings.json
+│   └── prompt_examples.json
+├── models/                  # modèles ML joblib versionnés
+├── examples/
+│   └── sample_sales.csv
+├── scripts/
+│   ├── upload_sample.py
+│   ├── apply_rules_demo.py
+│   └── run_local_llm_test.py
+├── tests/
+│   └── test_core_pipeline.py
+├── data/                    # dossiers de travail vides
+└── reports/                 # rapports générés ignorés par Git
+```
 
-## Quick Start
+## Pipeline de traitement
 
-### 1. Installation
+1. Upload et validation de format.
+2. Lecture du fichier avec fallback pour certains `.xls` corrompus.
+3. Profiling du dataset.
+4. Détection de domaine et détection de structure pivotée.
+5. Prédictions ML: rôle de colonne, action probable, score d'anomalie.
+6. Application des règles métier du domaine.
+7. Génération ou récupération du plan LLM.
+8. Validation stricte du plan: actions autorisées uniquement.
+9. Application déterministe des règles.
+10. Calcul des métriques avant/après.
+11. Stockage du rapport en mémoire pour le dashboard.
+12. Export CSV ou Excel à la demande.
 
-\\\ash
-# Create virtual environment
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
+## LLM
 
-# Install dependencies
-pip install -r requirements.txt
+Le LLM est utilisé comme assistant de planification, pas comme moteur de mutation.
 
-# Setup environment
-cp .env.example .env
-\\\
+Actions autorisées:
 
-### 2. Run Backend
+- `fill_missing`
+- `convert_type`
+- `standardize_date`
+- `remove_duplicate`
+- `mark_as_anomaly`
+- `reject_row`
 
-\\\ash
-cd backend
-python -m uvicorn main:app --host 0.0.0.0 --port 8000
-\\\
+Protections importantes:
 
-Backend runs at: http://localhost:8000
+- Les identifiants (`id`, `order_id`, `shipment_id`, `uuid`, etc.) ne sont pas convertis en dates ou nombres destructifs.
+- Les colonnes métier numériques (`price`, `quantity`, `weight`, `shipping_cost`, `amount`, `revenue`, etc.) ne sont jamais remplies automatiquement avec `0`.
+- Les colonnes financières ne sont jamais converties en datetime.
+- Les grands fichiers contournent l'appel LLM et utilisent un fallback local pour éviter les blocages.
 
-### 3. Open Frontend
+Providers:
 
-Open rontend/index.html in your browser
+- `LLM_PROVIDER=openai` avec `OPENAI_API_KEY`
+- `LLM_PROVIDER=groq` avec `GROQ_API_KEY`
+- `LLM_PROVIDER=local` avec Ollama et `LLM_LOCAL_MODEL`
 
-## Usage
+## RAG
 
-1. Click "Lancer ETL" (Launch ETL)
-2. Upload a CSV/Excel/JSON file
-3. Wait for automatic processing
-4. Review results and download cleaned data
+Le moteur RAG (`src/rag_engine.py`) enrichit le prompt avec des règles de nettoyage pertinentes.
 
-## Project Structure
+Comportement:
 
-\\\
-├── backend/              # FastAPI server
-│   ├── main.py          # Main application
-│   └── requirements.txt
-├── frontend/            # Web interface
-│   └── index.html
-├── src/                 # Core modules
-│   ├── extract.py       # Data extraction
-│   ├── profiler.py      # Data profiling
-│   ├── hybrid_ml.py     # Column roles, anomaly signals, action classification
-│   ├── rag_engine.py    # RAG system
-│   ├── llm_helper.py    # Plan generation and sanitization
-│   ├── transform.py     # Data transformation
-│   ├── rules_engine.py  # Deterministic execution of validated plans
-│   ├── load.py          # Data export
-│   └── utils.py         # Utilities
-├── config/              # Configuration files
-├── data/                # Data directories
-├── reports/             # Generated reports
-└── README.md
-\\\
+- Si ChromaDB fonctionne, les règles sont stockées dans `data/chroma_db/`.
+- Sinon, le système continue en mode mémoire.
+- Les packs métier peuvent alimenter le contexte avec des exemples de règles par domaine.
 
-## API Endpoints
+Le dossier `data/chroma_db/` est ignoré par Git car il s'agit d'un état local régénérable.
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| /upload-and-process | POST | Process uploaded file |
-| /export-csv | POST | Export as CSV |
-| /export-excel | POST | Export as Excel |
+## CAG
 
-## Technology Stack
+Le CAG (`src/cag_engine.py`) cache les plans de transformation à partir d'un hash du profil dataset:
 
-- **Backend**: FastAPI, Pandas, Python
-- **Frontend**: HTML5, CSS3, JavaScript
-- **AI**: ChromaDB, LangChain
-- **Database**: ChromaDB Vector Store
+- nombre de lignes;
+- nombre de colonnes;
+- noms/types de colonnes;
+- bucket de valeurs manquantes;
+- cardinalité.
 
-## Environment Variables
+Objectifs:
 
-Create .env file (copy from .env.example):
+- éviter des appels LLM répétés sur des datasets similaires;
+- réduire la latence;
+- réduire le coût API;
+- rendre les traitements plus stables.
 
-\\\env
-# Optional: For advanced RAG features
-OPENAI_API_KEY=your_key_here
-GROQ_API_KEY=your_key_here
-\\\
+Le cache disque `data/cag_cache/` est ignoré par Git.
 
-## Development
+## Règles métier
 
-### Running Tests
+### Sales / CRM
 
-\\\ash
-# Start backend
-cd backend && python -m uvicorn main:app --reload
+Colonnes typiques:
 
-# Open frontend
-open frontend/index.html
-\\\
+- `order_id`
+- `customer_name`
+- `product`
+- `price`
+- `quantity`
+- `order_date`
+- `country`
 
-### Multi-Domain Strategy
+Règles:
 
-See [reports/MULTI_DOMAIN_STRATEGY.md](reports/MULTI_DOMAIN_STRATEGY.md) for the recommended path to support logistics and sales use cases without fine-tuning too early.
+- dédoublonnage conservateur par `order_id`;
+- trim des textes;
+- noms clients invalides remplacés par `Unknown`;
+- produits invalides remplacés par le mode;
+- prix invalides ou négatifs convertis en `NaN`;
+- quantités invalides converties en `NaN`;
+- dates standardisées en `YYYY-MM-DD`;
+- pays invalides remplacés par le mode.
 
-### Adding Custom Plans
+### Logistics / Supply Chain
 
-Extend `src/rag_engine.py` for knowledge-base hints, `src/hybrid_ml.py` for ML signals, and `src/llm_helper.py` to shape the final cleaning plan.
+Colonnes typiques:
 
-## Troubleshooting
+- `shipment_id`
+- `origin`
+- `destination`
+- `weight`
+- `shipping_cost`
+- `delivery_date`
+- `status`
 
-**Backend won't start**
-- Check Python version (3.8+)
-- Run: pip install -r requirements.txt
-- Verify port 8000 is available
+Règles:
 
-**Upload fails**
-- Ensure file format is CSV/Excel/JSON
-- Check file isn't corrupted
-- Try with smaller file first
+- protection de `shipment_id`;
+- normalisation des villes, statuts et transporteurs;
+- validation des poids et coûts;
+- dates de livraison standardisées;
+- conservation des valeurs sensibles en `NaN` plutôt que remplissage arbitraire.
 
-**No results**
-- Check backend logs for errors
-- Verify CORS is enabled
-- Clear browser cache
+### Generic
 
-## License
+Quand aucun domaine n'est détecté:
 
-MIT
+- suppression très conservatrice des colonnes presque vides;
+- normalisation des tokens manquants (`N/A`, `null`, `unknown`, etc.);
+- trim et standardisation texte;
+- conversion type seulement si le ratio de parsing est suffisant;
+- marquage d'anomalies plutôt que suppression agressive.
 
-## Version
+## API
 
-1.0.0 - April 2026
+| Méthode | Route | Description |
+| --- | --- | --- |
+| `GET` | `/` | Accueil |
+| `GET` | `/etl` | Interface ETL |
+| `GET` | `/dashboard` | Dashboard du dernier rapport |
+| `POST` | `/upload-and-process` | Upload et nettoyage |
+| `GET` | `/last-report` | Dernier rapport en mémoire |
+| `POST` | `/export-csv` | Export CSV du dernier run |
+| `POST` | `/export-excel` | Export Excel du dernier run |
+| `POST` | `/retrain-ml` | Réentraînement ML optionnel |
+
+Exemple upload:
+
+```bash
+curl -F "file=@examples/sample_sales.csv" "http://127.0.0.1:8000/upload-and-process?domain_override=sales"
+```
+
+## Tests
+
+```powershell
+.venv\Scripts\python.exe -m pytest -q
+```
+
+Les tests actuels valident:
+
+- import de l'application FastAPI;
+- règles métier Sales;
+- fallback LLM sans clé API;
+- override de domaine.
+
+## Données et Git
+
+Le dépôt ne versionne pas:
+
+- environnements virtuels;
+- `node_modules`;
+- uploads utilisateurs;
+- exports nettoyés;
+- caches RAG/CAG;
+- gros datasets de test;
+- rapports générés.
+
+Les dossiers runtime sont conservés avec `.gitkeep`:
+
+- `backend/uploads/`
+- `data/in/`
+- `data/processed/`
+- `data/archive/`
+- `reports/execution/`
+- `reports/logs/`
+- `reports/profiling/`
+
+## Préparation avant push
+
+```powershell
+git status --short
+.venv\Scripts\python.exe -m pytest -q
+git add .
+git commit -m "Clean and structure ETL platform repository"
+```
+
+Le repo est volontairement léger: le code, les modèles utiles, la config, le frontend et un exemple minimal restent versionnés; les artefacts volumineux sont exclus.

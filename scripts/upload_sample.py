@@ -2,15 +2,23 @@ from pathlib import Path
 
 import requests
 
-url = "http://127.0.0.1:8000/upload-and-process"
-file_path = Path(__file__).parent.parent / "sample_data.csv"
 
-print(f"Posting {file_path} to {url}")
-with open(file_path, "rb") as f:
-    files = {"file": (file_path.name, f, "text/csv")}
-    r = requests.post(url, files=files)
+API_URL = "http://127.0.0.1:8000/upload-and-process?domain_override=sales"
+SAMPLE_PATH = Path(__file__).resolve().parent.parent / "examples" / "sample_sales.csv"
+
+
+def main() -> None:
+    print(f"Posting {SAMPLE_PATH} to {API_URL}")
+    with SAMPLE_PATH.open("rb") as fh:
+        files = {"file": (SAMPLE_PATH.name, fh, "text/csv")}
+        response = requests.post(API_URL, files=files, timeout=120)
+
+    print("Status:", response.status_code)
     try:
-        print("Status:", r.status_code)
-        print(r.json())
+        print(response.json())
     except Exception:
-        print("Response text:", r.text)
+        print(response.text)
+
+
+if __name__ == "__main__":
+    main()

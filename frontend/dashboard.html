@@ -601,11 +601,13 @@
             `;
         }
 
+        const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+
         async function refreshDashboard() {
             const summaryPanel = document.getElementById('summaryPanel');
             summaryPanel.innerHTML = '<div class="empty">Chargement du dernier rapport...</div>';
             try {
-                const response = await fetch('/last-report');
+                const response = await fetch(`${API_BASE}/last-report`);
                 if (!response.ok) {
                     summaryPanel.innerHTML = '<div class="empty">Aucun rapport disponible. Lancez un ETL depuis l\'accueil.</div>';
                     document.getElementById('kpis').innerHTML = [

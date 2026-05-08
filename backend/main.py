@@ -214,12 +214,9 @@ def harmonize_customer_names_by_id(cleaned_df: pd.DataFrame, source_df: pd.DataF
     if name_mode.empty:
         return cleaned_df
 
-    # Apply mapping to cleaned_df where id matches
     if id_col in cleaned_df.columns:
-        for idx, name in name_mode.items():
-            mask = cleaned_df[id_col] == idx
-            if mask.any():
-                cleaned_df.loc[mask, "customer_name"] = name
+        mapped_names = cleaned_df[id_col].map(name_mode)
+        cleaned_df["customer_name"] = mapped_names.fillna(cleaned_df["customer_name"])
 
     return cleaned_df
 
@@ -1415,11 +1412,11 @@ async def upload_and_process(
                 except Exception as e:
                     logger.warning(f"  Error in outlier detection for '{col}': {e}")
 
-            # FINAL GUARANTEE: keep one internal flagged frame for metrics,
-            # but expose only the sanitized user-facing frame to the UI/export.
-            df_with_flags = df_clean.copy()
-            df_clean_display = prepare_user_facing_dataframe(df_with_flags)
-            df_clean = df_clean_display.copy()
+        # FINAL GUARANTEE: keep one internal flagged frame for metrics,
+        # but expose only the sanitized user-facing frame to the UI/export.
+        df_with_flags = df_clean.copy()
+        df_clean_display = prepare_user_facing_dataframe(df_with_flags)
+        df_clean = df_clean_display.copy()
 
         # Calculate final stats based on flagged version (matches what users will see)
         final_size = len(df_with_flags)

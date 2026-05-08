@@ -44,6 +44,3 @@ flake8==6.1.0
 
 # Logging & Monitoring
 python-json-logger==2.0.7
-# Optional Excel support
-# xlrd is required for reading .xls Excel files (legacy Excel formats)
-xlrd>=2.0.1
